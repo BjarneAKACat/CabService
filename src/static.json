@@ -1,5 +1,5 @@
 {
-  "root": "build/",
+  "root": "dist/",
   "clean_urls": true,
   "rewrites": [
     { "source": "/*", "destination": "/index.html" }
