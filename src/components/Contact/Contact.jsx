@@ -1,24 +1,33 @@
 import React, { useState } from "react";
+import { useForm } from "@formspree/react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    contact: "",
-  });
+  const [state, originalHandleSubmit] = useForm("mgvkdpjr");
+  const [captchaToken, setCaptchaToken] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    // Reset form (optional)
-    setFormData({ username: "", contact: "" });
+    if (!captchaToken) {
+      alert("Please verify that you are not a robot.");
+      return;
+    }
+    const form = e.target;
+    let existingInput = form.querySelector('input[name="g-recaptcha-response"]');
+    if (!existingInput) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "g-recaptcha-response";
+      form.appendChild(input);
+      existingInput = input;
+    }
+    existingInput.value = captchaToken;
+
+    originalHandleSubmit(e);
   };
 
   return (
@@ -39,35 +48,56 @@ const Contact = () => {
 
             {/* Form Section */}
             <div className="sm:grid sm:place-items-center">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-4 w-full max-w-xs bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg"
-              >
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Your Name"
-                  value={formData.username}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-black dark:text-white focus:outline-none"
-                  required
-                />
-                <input
-                  type="tel"
-                  name="contact"
-                  placeholder="Contact Number"
-                  value={formData.contact}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-black dark:text-white focus:outline-none"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full font-semibold py-2 px-6 bg-primary text-white hover:bg-primary/80 duration-200 tracking-widest uppercase rounded-md"
+              {state.succeeded ? (
+                <p className="text-green-400 text-center font-semibold">
+                  Thanks! We'll be in touch soon.
+                </p>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="w-full max-w-xs flex flex-col items-center"
                 >
-                  Submit
-                </button>
-              </form>
+                  {/* Form Fields Box */}
+                  <div className="w-full space-y-4 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      pattern="^[A-Za-z\s]+$"
+                      className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-black dark:text-white focus:outline-none"
+                      required
+                    />
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="Contact Number"
+                      pattern="^\d{10}$"
+                      className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-black dark:text-white focus:outline-none"
+                      required
+                    />
+                  </div>
+
+                  {/* reCAPTCHA and Button OUTSIDE the box */}
+                  <div className="mt-4 flex flex-col items-center space-y-4">
+                    <div className="recaptcha-container">
+                      <ReCAPTCHA
+                        sitekey="6Lf7Nj4rAAAAAAw8PR9ewLPVj45PTfs8MqgKClXX"
+                        onChange={handleCaptchaChange}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={state.submitting || !captchaToken}
+                      className="w-full font-semibold py-2 px-6 bg-primary text-white hover:bg-primary/80 duration-200 tracking-widest uppercase rounded-md"
+                    >
+                      {state.submitting ? "Sending..." : "Submit"}
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>
