@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 import { Navlinks } from "./Navbar";
+import { Link } from "react-router-dom";
 
 const ResponsiveMenu = ({ showMenu, closeMenu }) => {
   return (
@@ -24,9 +25,9 @@ const ResponsiveMenu = ({ showMenu, closeMenu }) => {
         <ul className="space-y-4 text-xl">
           {Navlinks.map((data, index) => (
             <li key={index}>
-              <a href={data.link} className="mb-5 inline-block" onClick={closeMenu}>
-                {data.name}
-              </a>
+              <Link to={data.link} className="mb-5 inline-block" onClick={closeMenu}>
+              {data.name}
+            </Link>
             </li>
           ))}
         </ul>
