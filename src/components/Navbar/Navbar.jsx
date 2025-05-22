@@ -1,43 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 export const Navlinks = [
-  {
-    id: 1,
-    name: "HOME",
-    link: "/",
-  },
-  {
-    id: 2,
-    name: "ABOUT",
-    link: "/about",
-  },
-  {
-    id: 3,
-    name: "SERVICE",
-    link: "/services",
-  },
-  {
-    id: 4,
-    name: "BLOG",
-    link: "/blog",
-  },
-  {
-    id: 5,
-    name: "CONTACT",
-    link: "/contact",
-  },
+  { id: 1, name: "HOME", link: "/" },
+  { id: 2, name: "ABOUT", link: "/about" },
+  { id: 3, name: "SERVICE", link: "/services" },
+  { id: 4, name: "BLOG", link: "/blog" },
+  { id: 5, name: "CONTACT", link: "/contact" },
 ];
 
 const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  useEffect(() => {
+    const navEntries = performance.getEntriesByType("navigation");
+    const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
+
+    // Redirect only once after reload on mobile
+    if (isMobile && isReload && !sessionStorage.getItem("redirected")) {
+      sessionStorage.setItem("redirected", "true");
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <div className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300">
@@ -60,7 +53,6 @@ const Navbar = ({ theme, setTheme }) => {
                   </Link>
                 </li>
               ))}
-              {/* Dark Mode Toggle */}
               {theme === "dark" ? (
                 <BiSolidSun onClick={() => setTheme("light")} className="text-2xl cursor-pointer" />
               ) : (
@@ -85,7 +77,6 @@ const Navbar = ({ theme, setTheme }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <ResponsiveMenu showMenu={showMenu} closeMenu={toggleMenu} />
     </div>
   );
