@@ -43,7 +43,7 @@ const Services = () => {
               data-aos="fade-up"
               className="text-3xl font-semibold text-center sm:text-4xl font-serif"
             >
-              Why Choose Us
+              Services
             </h1>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
