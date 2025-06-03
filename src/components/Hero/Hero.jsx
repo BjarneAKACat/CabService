@@ -241,44 +241,47 @@ const Hero = ({ theme }) => {
 
       {/* Main Content Section */}
       <section className="w-full bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+  <div className="container min-h-[620px] flex justify-center px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-12 py-12 w-full max-w-7xl">
+      
+      {/* Car Image Section */}
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        data-aos-once="false"
+        className="order-1 sm:order-2 relative group max-w-full"
+      >
+        {/* Floating elements */}
+        <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-md animate-bounce"></div>
+        <div className="absolute -bottom-4 -right-12 w-12 h-12 bg-primary/15 rounded-full blur-md animate-bounce"></div>
+        <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce"></div>
 
-        <div className="container min-h-[620px] flex">
-          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-12 py-12">
-
-            {/* Car Image Section */}
-            <div
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              data-aos-once="false"
-              className="order-1 sm:order-2 relative group"
-            >
-              {/* Floating elements */}
-              <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-md animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-12 w-12 h-12 bg-primary/15 rounded-full blur-md animate-bounce"></div>
-              <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce"></div>
-
-              <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700">
-                <img src={theme === "dark" ? carPng : yellowCar} alt="Premium Car" />
-                <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
-                  PREMIUM
-                </div>
-                <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
-                  <Star className="w-3 h-3 text-primary fill-current" />
-                  <span className="text-xs font-semibold">4.9</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Form Section */}
-            <div className="order-2 sm:order-1 sm:pr-32 p-10 bg-white dark:bg-gray-800 rounded-3xl shadow-lg max-w-md mx-auto sm:mx-0 min-h-[480px] flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700">
-              <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg">
-                Contact Us
-              </h2>
-              <Form />
-            </div>
+        <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700 max-w-full overflow-hidden">
+          <img
+            src={theme === "dark" ? carPng : yellowCar}
+            alt="Premium Car"
+            className="max-w-full h-auto object-contain"
+          />
+          <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
+            PREMIUM
+          </div>
+          <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
+            <Star className="w-3 h-3 text-primary fill-current" />
+            <span className="text-xs font-semibold">4.9</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Form Section */}
+      <div className="order-2 sm:order-1 w-full max-w-md p-8 sm:p-10 bg-white dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700 min-h-[480px]">
+        <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-center w-full">
+          Contact Us
+        </h2>
+        <Form />
+      </div>
+    </div>
+  </div>
+</section>
       <section className="w-full bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
           
