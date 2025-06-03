@@ -1,200 +1,377 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect } from "react";
+// import { ArrowRight, Star, Shield, Zap } from "lucide-react";
+// import { Helmet } from 'react-helmet';
+// import carPng from "../../assets/car.png";
+// import yellowCar from "../../assets/banner-car.png";
+// import bgVdo from "../../assets/bgVdo.mp4";
+
+// const Hero = ({ theme }) => {
+//   useEffect(() => {
+//   }, []);
+
+//   return (
+//     <div className="dark:bg-black dark:text-white duration-300 relative overflow-hidden">
+
+//       <Helmet>
+//         <title>Dhyana Cabline</title>
+//         <meta name="description" content="Book reliable and affordable cab services in Jamnagar. 24/7 taxi service with professional drivers." />
+//         <meta name="keywords" content="Jamnagar Cab, Cab Service in Jamnagar, Taxi in Jamnagar, Outstation Taxi Jamnagar, Airport Cab Jamnagar" />
+//         <meta name="robots" content="index, follow" />
+//       </Helmet>
+
+//       {/* Subtle background patterns */}
+//       <div className="absolute inset-0 opacity-5">
+//         <div className="absolute top-20 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+//         <div className="absolute top-40 right-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
+//         <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '4s'}}></div>
+//       </div>
+
+//       <div className="container min-h-[620px] flex">
+//         <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-12 py-12">
+          
+//           {/* Car Image Section */}
+//           <div
+//             data-aos="zoom-in"
+//             data-aos-duration="1500"
+//             data-aos-once="false"
+//             className="order-1 sm:order-2 relative group"
+//           >
+//             {/* Floating elements around car */}
+//             <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-md animate-bounce" style={{animationDelay: '0s', animationDuration: '1s'}}></div>
+//             <div className="absolute -bottom-4 -right-12 w-12 h-12 bg-primary/15 rounded-full blur-md animate-bounce" style={{animationDelay: '1s', animationDuration: '2s'}}></div>
+//             <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
+            
+//             {/* Car image container with enhanced styling */}
+//             <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700">
+//               <img
+//                 src={theme === "dark" ? carPng : yellowCar}
+//                 alt="Premium Car"
+//               />
+              
+//               {/* Premium badge */}
+//               <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
+//                 PREMIUM
+//               </div>
+              
+//               {/* Rating badge */}
+//               <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
+//                 <Star className="w-3 h-3 text-primary fill-current" />
+//                 <span className="text-xs font-semibold">4.9</span>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Content Section */}
+//           <div className="space-y-6 order-2 sm:order-1 sm:pr-32">
+            
+//             {/* Trust badge */}
+//             <div 
+//               data-aos="fade-up"
+//               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+//             >
+//               <Shield className="w-4 h-4 text-primary" />
+//               <span className="text-primary text-sm font-semibold tracking-wide">TRUSTED & SECURE</span>
+//             </div>
+
+//             {/* Main heading */}
+//             <div className="space-y-3">
+//               <p 
+//                 data-aos="fade-up" 
+//                 className="text-primary text-2xl font-bold tracking-wider uppercase"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 Effortless
+//               </p>
+//               <h1
+//                 data-aos="fade-up"
+//                 data-aos-delay="600"
+//                 className="text-5xl lg:text-7xl font-black tracking-tight leading-none"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 Car Rental
+//               </h1>
+//             </div>
+            
+//             {/* Description */}
+//             <div className="space-y-4">
+//               <p 
+//                 data-aos="fade-up" 
+//                 data-aos-delay="1000"
+//                 className="text-lg lg:text-xl leading-relaxed opacity-90 font-medium"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 Drive Your Way — Easy, Affordable, Reliable.
+//               </p>
+//               <p 
+//                 data-aos="fade-up" 
+//                 data-aos-delay="1200"
+//                 className="text-base opacity-75 leading-relaxed"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 Rent your dream car in just a few clicks. Flexible plans. Instant bookings. No hidden fees.
+//               </p>
+//             </div>
+
+//             {/* Features list */}
+//             <div 
+//               data-aos="fade-up" 
+//               data-aos-delay="1300"
+//               className="flex flex-wrap gap-6 py-4"
+//             >
+//               <div className="flex items-center gap-2">
+//                 <Zap className="w-4 h-4 text-primary" />
+//                 <span className="text-sm font-medium opacity-90">Instant Booking</span>
+//               </div>
+//               <div className="flex items-center gap-2">
+//                 <Shield className="w-4 h-4 text-primary" />
+//                 <span className="text-sm font-medium opacity-90">Fully Insured</span>
+//               </div>
+//               <div className="flex items-center gap-2">
+//                 <Star className="w-4 h-4 text-primary" />
+//                 <span className="text-sm font-medium opacity-90">5-Star Service</span>
+//               </div>
+//             </div>
+
+//             {/* CTA Buttons */}
+//             <div 
+//               data-aos="fade-up"
+//               data-aos-delay="1500"
+//               className="flex flex-col sm:flex-row gap-4 pt-4"
+//             >
+//               <button
+//                 onClick={() => {
+//                   // AOS.refreshHard(); - Simulated for demo
+//                 }}
+//                 className="group rounded-xl bg-primary hover:bg-primary/90 transition-all duration-500 py-4 px-8 text-black font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 Get Started
+//                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+//               </button>
+              
+//               <button className="rounded-xl border-2 border-primary/40 hover:border-primary hover:bg-primary/5 transition-all duration-500 py-4 px-8 font-semibold text-lg backdrop-blur-sm"
+//                 style={{fontFamily: 'Inter, system-ui, sans-serif'}}
+//               >
+//                 View Fleet
+//               </button>
+//             </div>
+
+//             {/* Stats */}
+//             <div 
+//               data-aos="fade-up" 
+//               data-aos-delay="1700"
+//               className="grid grid-cols-3 gap-6 pt-8 border-t border-primary/20"
+//             >
+//               <div className="text-center sm:text-left">
+//                 <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   15K+
+//                 </div>
+//                 <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   Happy Clients
+//                 </div>
+//               </div>
+//               <div className="text-center sm:text-left">
+//                 <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   500+
+//                 </div>
+//                 <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   Premium Cars
+//                 </div>
+//               </div>
+//               <div className="text-center sm:text-left">
+//                 <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   24/7
+//                 </div>
+//                 <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
+//                   Support
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
+import React, { useEffect } from "react";
 import { ArrowRight, Star, Shield, Zap } from "lucide-react";
 import { Helmet } from 'react-helmet';
+import Form from "../Form/Form";
 import carPng from "../../assets/car.png";
 import yellowCar from "../../assets/banner-car.png";
+import bgVdo from "../../assets/bgVdo.mp4";
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Hero = ({ theme }) => {
-  useEffect(() => {
-    // AOS.refresh(); - Simulated for demo
-  }, []);
-
-  // Using placeholder images to represent your actual car images
-  // const carPng = "/api/placeholder/600/400";
-  // const yellowCar = "/api/placeholder/600/400";
+  useEffect(() => {}, []);
 
   return (
     <div className="dark:bg-black dark:text-white duration-300 relative overflow-hidden">
 
       <Helmet>
-        <title>Jamnagar Cab | Best Cab & Taxi Services in Jamnagar</title>
+        <title>Dhyana Cabline</title>
         <meta name="description" content="Book reliable and affordable cab services in Jamnagar. 24/7 taxi service with professional drivers." />
         <meta name="keywords" content="Jamnagar Cab, Cab Service in Jamnagar, Taxi in Jamnagar, Outstation Taxi Jamnagar, Airport Cab Jamnagar" />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      {/* Subtle background patterns */}
-      <div className="absolute inset-0 opacity-5">
+      <section className="relative w-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={bgVdo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+
+      {/* Subtle background patterns (existing) */}
+      <div className="absolute inset-0 opacity-5 z-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="container min-h-[620px] flex">
-        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-12 py-12">
-          
-          {/* Car Image Section */}
-          <div
-            data-aos="zoom-in"
-            data-aos-duration="1500"
-            data-aos-once="false"
-            className="order-1 sm:order-2 relative group"
-          >
-            {/* Floating elements around car */}
-            <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-md animate-bounce" style={{animationDelay: '0s', animationDuration: '1s'}}></div>
-            <div className="absolute -bottom-4 -right-12 w-12 h-12 bg-primary/15 rounded-full blur-md animate-bounce" style={{animationDelay: '1s', animationDuration: '2s'}}></div>
-            <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
-            
-            {/* Car image container with enhanced styling */}
-            <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700">
-              <img
-                src={theme === "dark" ? carPng : yellowCar}
-                alt="Premium Car"
-                // className="sm:scale-125 relative -z-10 max-h-[600px] drop-shadow-[2px_20px_6px_rgba(0,0,0,0.50)] transform group-hover:scale-110 transition-transform duration-700"
-              />
-              
-              {/* Premium badge */}
-              <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
-                PREMIUM
-              </div>
-              
-              {/* Rating badge */}
-              <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
-                <Star className="w-3 h-3 text-primary fill-current" />
-                <span className="text-xs font-semibold">4.9</span>
-              </div>
-            </div>
-          </div>
+      {/* Main Content Section */}
+      <section className="w-full bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
 
-          {/* Content Section */}
-          <div className="space-y-6 order-2 sm:order-1 sm:pr-32">
-            
-            {/* Trust badge */}
-            <div 
-              data-aos="fade-up"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+        <div className="container min-h-[620px] flex">
+          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-12 py-12">
+
+            {/* Car Image Section */}
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              data-aos-once="false"
+              className="order-1 sm:order-2 relative group"
             >
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-semibold tracking-wide">TRUSTED & SECURE</span>
-            </div>
+              {/* Floating elements */}
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-md animate-bounce"></div>
+              <div className="absolute -bottom-4 -right-12 w-12 h-12 bg-primary/15 rounded-full blur-md animate-bounce"></div>
+              <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce"></div>
 
-            {/* Main heading */}
-            <div className="space-y-3">
-              <p 
-                data-aos="fade-up" 
-                className="text-primary text-2xl font-bold tracking-wider uppercase"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                Effortless
-              </p>
-              <h1
-                data-aos="fade-up"
-                data-aos-delay="600"
-                className="text-5xl lg:text-7xl font-black tracking-tight leading-none"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                Car Rental
-              </h1>
-            </div>
-            
-            {/* Description */}
-            <div className="space-y-4">
-              <p 
-                data-aos="fade-up" 
-                data-aos-delay="1000"
-                className="text-lg lg:text-xl leading-relaxed opacity-90 font-medium"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                Drive Your Way — Easy, Affordable, Reliable.
-              </p>
-              <p 
-                data-aos="fade-up" 
-                data-aos-delay="1200"
-                className="text-base opacity-75 leading-relaxed"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                Rent your dream car in just a few clicks. Flexible plans. Instant bookings. No hidden fees.
-              </p>
-            </div>
-
-            {/* Features list */}
-            <div 
-              data-aos="fade-up" 
-              data-aos-delay="1300"
-              className="flex flex-wrap gap-6 py-4"
-            >
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium opacity-90">Instant Booking</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium opacity-90">Fully Insured</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium opacity-90">5-Star Service</span>
+              <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700">
+                <img src={theme === "dark" ? carPng : yellowCar} alt="Premium Car" />
+                <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
+                  PREMIUM
+                </div>
+                <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
+                  <Star className="w-3 h-3 text-primary fill-current" />
+                  <span className="text-xs font-semibold">4.9</span>
+                </div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div 
-              data-aos="fade-up"
-              data-aos-delay="1500"
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-            >
-              <button
-                onClick={() => {
-                  // AOS.refreshHard(); - Simulated for demo
-                }}
-                className="group rounded-xl bg-primary hover:bg-primary/90 transition-all duration-500 py-4 px-8 text-black font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-              
-              <button className="rounded-xl border-2 border-primary/40 hover:border-primary hover:bg-primary/5 transition-all duration-500 py-4 px-8 font-semibold text-lg backdrop-blur-sm"
-                style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-              >
-                View Fleet
-              </button>
-            </div>
-
-            {/* Stats */}
-            <div 
-              data-aos="fade-up" 
-              data-aos-delay="1700"
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-primary/20"
-            >
-              <div className="text-center sm:text-left">
-                <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  15K+
-                </div>
-                <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  Happy Clients
-                </div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  500+
-                </div>
-                <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  Premium Cars
-                </div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl lg:text-3xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  24/7
-                </div>
-                <div className="text-xs uppercase tracking-wider opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                  Support
-                </div>
-              </div>
+            {/* Form Section */}
+            <div className="order-2 sm:order-1 sm:pr-32 p-10 bg-white dark:bg-gray-800 rounded-3xl shadow-lg max-w-md mx-auto sm:mx-0 min-h-[480px] flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700">
+              <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg">
+                Contact Us
+              </h2>
+              <Form />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section className="w-full bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+          
+          {/* TRUSTED & SECURE badge */}
+          <div data-aos="fade-up" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 backdrop-blur-sm">
+            <Shield className="w-4 h-4 text-primary" />
+            <span className="text-primary text-sm font-semibold tracking-wide">TRUSTED & SECURE</span>
+          </div>
+
+          {/* Heading */}
+          <div className="space-y-3">
+            <p data-aos="fade-up" className="text-primary text-xl sm:text-2xl font-bold tracking-wider uppercase">Effortless</p>
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-gray-900 dark:text-white">
+              Car Rental
+            </h1>
+          </div>
+
+          {/* Description */}
+          <div className="space-y-4">
+            <p data-aos="fade-up" className="text-lg lg:text-xl leading-relaxed text-gray-700 dark:text-gray-300 font-medium">
+              Drive Your Way — Easy, Affordable, Reliable.
+            </p>
+            <p data-aos="fade-up" className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              Rent your dream car in just a few clicks. Flexible plans. Instant bookings. No hidden fees.
+            </p>
+          </div>
+
+          {/* Features */}
+          <div data-aos="fade-up" className="flex flex-wrap gap-6 py-4">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <Zap className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">Instant Booking</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <Shield className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">Fully Insured</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <Star className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">5-Star Service</span>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-primary/20">
+          {/* Happy Clients */}
+          <div className="text-center sm:text-left">
+            <div className="text-2xl lg:text-3xl font-black text-primary">
+              <CountUp end={15000} duration={2} separator=",">
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef}>0</span>
+                  </VisibilitySensor>
+                )}
+              </CountUp>
+              +
+            </div>
+            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Happy Clients</div>
+          </div>
+
+          {/* Premium Cars */}
+          <div className="text-center sm:text-left">
+            <div className="text-2xl lg:text-3xl font-black text-primary">
+              <CountUp end={500} duration={2}>
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef}>0</span>
+                  </VisibilitySensor>
+                )}
+              </CountUp>
+              +
+            </div>
+            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Premium Cars</div>
+          </div>
+
+          {/* Support */}
+          <div className="text-center sm:text-left">
+            <div className="text-2xl lg:text-3xl font-black text-primary">
+              <CountUp end={24} duration={2}>
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef}>0</span>
+                  </VisibilitySensor>
+                )}
+              </CountUp>
+              /7
+            </div>
+            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Support</div>
+          </div>
+        </div>
+        </div>
+      </section>
+
     </div>
   );
 };

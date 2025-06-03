@@ -1,75 +1,7 @@
-// import React from "react";
-
-// const testimonialData = [
-//   {
-//     name: "Dilshad",
-//     image: "",
-//     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-//     aosDelay: "0",
-//   },
-//   {
-//     name: "Satya",
-//     image: "",
-//     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-//     aosDelay: "300",
-//   },
-//   {
-//     name: "Sabir",
-//     image: "",
-//     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-//     aosDelay: "1000",
-//   },
-// ];
-// const Testimonial = () => {
-//   return (
-//     <>
-//       <span id="about"></span>
-//       <div className="dark:bg-black dark:text-white py-14 sm:pb-24">
-//         <div className="container">
-//           {/* Header */}
-//           <div className="space-y-4 pb-12">
-//             <p
-//               data-aos="fade-up"
-//               className="text-3xl font-semibold text-center sm:text-4xl font-serif"
-//             >
-//               What Our Clients Say About Us
-//             </p>
-//             <p data-aos="fade-up" className="text-center sm:px-44">
-//               We pride ourselves on delivering exceptional service, and our customers agree!  
-//               Here's what real users are saying about their experiences with our hassle-free car rental service.
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-black dark:text-white">
-//             {testimonialData.map((skill) => (
-//               <div
-//                 key={skill.name}
-//                 data-aos="fade-up"
-//                 data-aos-delay={skill.aosDelay}
-//                 className="card text-center group space-y-3 sm:space-y-6 p-4 sm:py-12 dark:bg-white/20 bg-gray-100 duration-300  rounded-lg "
-//               >
-//                 <div className="grid place-items-center ">
-//                   <img
-//                     src="https://picsum.photos/200"
-//                     alt=""
-//                     className="rounded-full w-20 h-20"
-//                   />
-//                 </div>
-//                 <div className="text-2xl">⭐⭐⭐⭐⭐</div>
-//                 <p>{skill.description}</p>
-//                 <p className="text-center font-semibold">{skill.name}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Testimonial;
 import React from "react";
 import { Quote, Star } from "lucide-react";
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const testimonialData = [
   {
@@ -144,16 +76,47 @@ const Testimonial = () => {
               data-aos-delay="600"
               className="flex justify-center gap-8 pt-8"
             >
+              {/* Average Rating */}
               <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>4.9</div>
+                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <CountUp end={4.9} duration={2} decimals={1}>
+                    {({ countUpRef, start }) => (
+                      <VisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </VisibilitySensor>
+                    )}
+                  </CountUp>
+                </div>
                 <div className="text-sm opacity-70 font-medium">Average Rating</div>
               </div>
+
+              {/* Reviews */}
               <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>2000+</div>
+                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <CountUp end={2000} duration={2} separator=",">
+                    {({ countUpRef, start }) => (
+                      <VisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </VisibilitySensor>
+                    )}
+                  </CountUp>
+                  +
+                </div>
                 <div className="text-sm opacity-70 font-medium">Reviews</div>
               </div>
+
+              {/* Satisfaction */}
               <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>99%</div>
+                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <CountUp end={99} duration={2}>
+                    {({ countUpRef, start }) => (
+                      <VisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </VisibilitySensor>
+                    )}
+                  </CountUp>
+                  %
+                </div>
                 <div className="text-sm opacity-70 font-medium">Satisfaction</div>
               </div>
             </div>
@@ -228,22 +191,6 @@ const Testimonial = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div 
-            data-aos="fade-up" 
-            data-aos-delay="1200"
-            className="text-center pt-16"
-          >
-            <div className="space-y-4">
-              <p className="text-lg font-medium opacity-90" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                Ready to join thousands of satisfied customers?
-              </p>
-              <button className="rounded-xl bg-primary hover:bg-primary/90 transition-all duration-500 py-3 px-8 text-black font-bold shadow-lg hover:shadow-xl hover:scale-105" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                Start Your Journey
-              </button>
-            </div>
           </div>
         </div>
       </div>
