@@ -8,7 +8,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
+import Cars from "./components/Services/Cars";
 import CarList from "./components/CarList/CarList";
+import Travel from "./components/CarList/Travel";
 import AppStoreBanner from "./components/AppStoreBanner/AppStoreBanner";
 import Contact from "./components/Contact/Contact";
 import Testimonial from "./components/Testimonial/Testimonial";
@@ -56,8 +58,14 @@ const App = () => {
             }
           />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/blog" element={<CarList />} />
+          <Route path="/services" element={
+          <>
+            {/* <Services /> */}
+            <Cars/>
+          </>
+          } 
+          />
+          <Route path="/travel" element={<Travel />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
