@@ -40,9 +40,6 @@ const EnhancedForm = () => {
         <div className="absolute top-40 right-32 animate-bounce animation-delay-3000">
           <Sparkles className="w-6 h-6 text-yellow-400 opacity-80" />
         </div>
-        <div className="absolute bottom-32 left-40 animate-bounce animation-delay-2000">
-          <Calendar className="w-7 h-7 text-yellow-400 opacity-80" />
-        </div>
       </div>
 
       <div className="relative z-9 py-20 px-4">
@@ -85,23 +82,20 @@ const EnhancedForm = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Form Section */}
-              <div className="relative">
-                <div className="bg-white dark:bg-gray-800 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-                  <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-black dark:text-white mb-2">Launch Your Taxi Service</h2>
-                    <p className="text-gray-600 dark:text-gray-400">Tell us about your taxi business vision and we'll help you get started</p>
-                  </div>
-                  <Form />
-                </div>
+            </div>
+          </div>
+          {/* Form Section */}
+          <div className="w-full flex justify-center">
+            <div className="bg-white dark:bg-gray-800 backdrop-blur-xl border border-white/10 rounded-2xl p-8 my-6 shadow-xl">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold text-black dark:text-white mb-2">Launch Your Taxi Service</h2>
+                <p className="text-gray-600 dark:text-gray-400">Tell us about your taxi business vision and we'll help you get started</p>
               </div>
-
+              <Form />
             </div>
           </div>
         </div>
       </div>
-
       {/* Tailwind Animation Delay Fix */}
       <style jsx>{`
         .animation-delay-1000 {
