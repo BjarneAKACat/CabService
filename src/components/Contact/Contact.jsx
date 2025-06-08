@@ -1,31 +1,7 @@
-import React, { useState } from 'react';
-import { Car, Mail, Phone, User, MapPin, Calendar, ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
+import { Car, ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
 import Form from '../Form/Form';
 
-const EnhancedForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    timeline: '',
-    message: ''
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [focusedField, setFocusedField] = useState('');
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = () => {
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
-
+const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-white dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -45,7 +21,7 @@ const EnhancedForm = () => {
       <div className="relative z-9 py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-white/50 dark:border-white/20 rounded-3xl p-8 lg:p-12 shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
 
               {/* Left Content Section */}
               <div className="space-y-8">
@@ -115,4 +91,4 @@ const EnhancedForm = () => {
   );
 };
 
-export default EnhancedForm;
+export default Contact;

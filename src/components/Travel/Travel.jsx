@@ -9,7 +9,6 @@ const GujaratCabServices = () => {
       image: "https://www.trawell.in/admin/images/upload/133167934Jamnagar_Lakhota_Lake_and_Museum_Main.jpg",
       distance: "320 km from Ahmedabad",
       duration: "5-6 hours",
-      fare: "₹4,800",
       highlights: [
         "Lakhota Palace floating on Ranmal Lake",
         "World's largest oil refining complex",
@@ -24,7 +23,6 @@ const GujaratCabServices = () => {
       image: "https://www.traveldealsfinder.com/wp-content/uploads/Tower-of-Rajkot.jpg",
       distance: "220 km from Ahmedabad",
       duration: "3-4 hours",
-      fare: "₹3,200",
       highlights: [
         "Watson Museum with colonial artifacts",
         "Kaba Gandhi No Delo - Gandhi's childhood home",
@@ -39,7 +37,6 @@ const GujaratCabServices = () => {
       image: "https://www.mysoultravels.com/wp-content/uploads/2020/05/junagardh-trip-9-1536x1515.jpg",
       distance: "290 km from Ahmedabad",
       duration: "4-5 hours",
-      fare: "₹4,200",
       highlights: [
         "Uparkot Fort with 2300 years of history",
         "Girnar Hill with sacred Jain and Hindu temples",
@@ -54,7 +51,6 @@ const GujaratCabServices = () => {
       image: "https://thetravelshots.com/wp-content/uploads/2021/04/Rann-of-kutch.jpg",
       distance: "350 km from Ahmedabad",
       duration: "6-7 hours",
-      fare: "₹5,500",
       highlights: [
         "Great Rann of Kutch - world's largest salt desert",
         "Rann Utsav - India's biggest cultural festival",
@@ -69,7 +65,6 @@ const GujaratCabServices = () => {
       image: "https://images.odishatv.in/uploadimage/library/16_9/16_9_5/IMAGE_1661694788.webp",
       distance: "450 km from Ahmedabad",
       duration: "7-8 hours",
-      fare: "₹6,800",
       highlights: [
         "Dwarkadhish Temple - one of Char Dham",
         "Bet Dwarka island with ancient temples",

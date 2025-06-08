@@ -84,16 +84,7 @@ export default function Form() {
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
               </div>
-
-              <div className="mt-4 flex flex-col items-center space-y-4">
-                <div className="recaptcha-container">
-                  <ReCAPTCHA
-                    sitekey={import.meta.env.VITE_CAPCHA_API}
-                    onChange={handleCaptchaChange}
-                  />
-                  {errors.captcha && <p className="text-red-500 text-sm mt-1">{errors.captcha}</p>}
-                </div>
-
+              <div className="mt-4 flex flex-col items-center space-y-4 w-full">
                 <button
                   type="submit"
                   disabled={state.submitting}

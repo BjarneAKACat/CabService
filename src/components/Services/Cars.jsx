@@ -52,6 +52,16 @@ const Cars = () => {
       image: "https://www.livemint.com/lm-img/img/2023/08/02/1600x900/Toyota_Innova_Crysta_Petrol_1671612142263_1690967289659.webp",
       features: ["Luxury", "VIP", "Business Travel"]
     },
+    {
+      type: "MUV",
+      models: "Kia Carens",
+      rate: "₹30/km",
+      average: "300km average day",
+      da: "₹300 DA",
+      extra: "Extra toll + parking",
+      image: "https://s.yimg.com/fz/api/res/1.2/WV1mUKBEn3gv0ASs4lA9YQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/71550272-03b0-3ead-ab85-3cd249077a54/t_500x300",
+      features: ["Comfortable", "Spacious", "Family Travel"]
+    },
   ];
 
   return (

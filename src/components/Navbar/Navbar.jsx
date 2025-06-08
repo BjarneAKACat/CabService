@@ -59,13 +59,21 @@ const Navbar = ({ theme, setTheme }) => {
         </div>
         
         <div>
-          <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-amber-600 bg-clip-text text-transparent font-serif">
+        <Link to="/">
+          <span className="
+            text-lg sm:text-xl md:text-3xl lg:text-4xl  /* responsive sizes */
+            font-bold  /* bold on all sizes */
+            font-sans  /* change to sans-serif for cleaner look */
+            bg-gradient-to-r from-yellow-500 via-orange-500 to-amber-600
+            bg-clip-text text-transparent
+          ">
             Dhyana Cab Line
           </span>
-          <div className="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide">
-            Your Trusted Ride Partner
-          </div>
+        </Link>
+        <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium tracking-wide">
+          Your Trusted Ride Partner
         </div>
+      </div>
       </div>
 
       {/* Desktop Navbar */}

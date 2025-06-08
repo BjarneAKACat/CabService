@@ -2,6 +2,7 @@ import React from "react";
 import { Quote, Star } from "lucide-react";
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
+import { LayoutDashboard, User } from 'lucide-react';
 
 const testimonialData = [
   {
@@ -14,13 +15,13 @@ const testimonialData = [
     name: "Satya",
     image: "",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    aosDelay: "300",
+    aosDelay: "150",
   },
   {
     name: "Sabir",
     image: "",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    aosDelay: "1000",
+    aosDelay: "300",
   },
 ];
 
@@ -132,7 +133,7 @@ const Testimonial = () => {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-primary/30 text-black dark:text-white h-full">
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-100 hover:scale-105 hover:border-primary/30 text-black dark:text-white h-full">
                   
                   {/* Quote icon */}
                   <div className="absolute top-4 right-4 opacity-20">
@@ -143,16 +144,9 @@ const Testimonial = () => {
                   <div className="space-y-6 text-center">
                     
                     {/* Profile Image */}
-                    <div className="relative mx-auto">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 p-1">
-                        <img
-                          src="https://picsum.photos/200"
-                          alt={testimonial.name}
-                          className="rounded-full w-full h-full object-cover"
-                        />
-                      </div>
-                      {/* Online indicator */}
-                      <div className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white dark:border-black"></div>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 p-1 flex items-center justify-center">
+                      <LayoutDashboard className="w-12 h-12 text-primary" />
+                      <User className="absolute w-6 h-6 text-secondary top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
 
                     {/* Stars */}

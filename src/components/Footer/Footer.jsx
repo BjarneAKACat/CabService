@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="absolute bottom-8 right-10 w-20 h-20 bg-yellow-400 rounded-full"></div>
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-9">
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 py-8">
             {/* Company Info */}

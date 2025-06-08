@@ -28,7 +28,7 @@ const ResponsiveMenu = ({ showMenu, closeMenu }) => {
 <div
   className={`${
     showMenu ? "left-0" : "-left-[100%]"
-  } fixed bottom-0 top-0 z-[9999] flex h-screen w-[85%] max-w-sm flex-col bg-white dark:bg-gray-900 dark:text-white px-0 text-black transition-all duration-300 ease-out md:hidden shadow-2xl border-r border-yellow-300 dark:border-amber-600`}
+  } fixed bottom-0 top-0 z-[9999] flex h-screen w-[75%] max-w-sm flex-col bg-white dark:bg-gray-900 dark:text-white px-0 text-black transition-all duration-300 ease-out md:hidden shadow-2xl border-r border-yellow-300 dark:border-amber-600`}
 >
   {/* Header with Close Button */}
   <div className="flex items-center justify-between px-6 py-4 border-b border-yellow-300 dark:border-amber-600 bg-yellow-50 dark:bg-gray-800">

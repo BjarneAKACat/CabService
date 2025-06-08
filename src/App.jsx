@@ -13,6 +13,7 @@ import Travel from "./components/Travel/Travel";
 import Contact from "./components/Contact/Contact";
 import Testimonial from "./components/Testimonial/Testimonial";
 import Footer from "./components/Footer/Footer";
+import FloatingButtons from "./components/Buttons/FloatingButton";
 
 const App = () => {
   const [theme, setTheme] = useState(
@@ -65,6 +66,7 @@ const App = () => {
           <Route path="/travel" element={<Travel />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <FloatingButtons/>
         <Footer />
       </Router>
     </div>
