@@ -142,12 +142,6 @@ const Testimonial = () => {
 
                   {/* Content */}
                   <div className="space-y-6 text-center">
-                    
-                    {/* Profile Image */}
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 p-1 flex items-center justify-center">
-                      <LayoutDashboard className="w-12 h-12 text-primary" />
-                      <User className="absolute w-6 h-6 text-secondary top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>
 
                     {/* Stars */}
                     <div className="flex justify-center gap-1">
@@ -168,15 +162,9 @@ const Testimonial = () => {
                           {testimonial.name}
                         </p>
                         <p className="text-sm opacity-70 font-medium">
-                          Verified Customer
+                          Actual Google Review
                         </p>
                       </div>
-                    </div>
-
-                    {/* Verified badge */}
-                    <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-xs font-semibold text-primary">VERIFIED</span>
                     </div>
                   </div>
 

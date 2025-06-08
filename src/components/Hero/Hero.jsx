@@ -97,6 +97,12 @@ const Hero = ({ theme }) => {
               <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-center w-full">
                 Contact Us
               </h2>
+              <p className="text-sm sm:text-sm text-gray-500 dark:text-gray-400 font-bold tracking-wide m-1">
+                Jahan Bhi Jana Hai,
+              </p>
+              <p className="text-sm sm:text-sm text-gray-500 dark:text-gray-400 font-bold tracking-wide mb-4">
+                Hum Saath Hai.
+              </p>
               <div className="w-full sm:w-[90%] md:w-[95%] lg:w-full">
                 <Form />
               </div>

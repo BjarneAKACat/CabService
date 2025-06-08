@@ -47,45 +47,22 @@ const Footer = () => {
                 </h1>
               </div>
 
-              {/* Features */}
-              <div className="flex flex-wrap gap-x-6 gap-y-3 w-full">
-                {[
-                  { icon: Shield, text: "Safe & Secure" },
-                  { icon: Clock, text: "24/7 Available" },
-                  { icon: Star, text: "5-Star Rated" },
-                  { icon: Users, text: "Pro Drivers" },
-                ].map(({ icon: Icon, text }, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-sm min-w-[120px] text-gray-600 dark:text-gray-300 hover:bg-yellow-100 dark:hover:bg-yellow-500/20 px-2 py-1 rounded-lg transition-colors duration-300"
-                  >
-                    <div className="w-6 h-6 bg-yellow-100 dark:bg-yellow-500/20 rounded-lg flex items-center justify-center">
-                      <Icon className="w-3.5 h-3.5 text-yellow-600 dark:text-yellow-400" />
-                    </div>
-                    <span className="font-medium">{text}</span>
-                  </div>
-                ))}
-              </div>
-
               {/* Contact Info */}
               <div className="flex flex-wrap gap-x-8 gap-y-3 w-full">
                 {[
                   {
-                    icon: MapPin,
-                    title: "Jamnagar, Gujarat",
-                    subtitle: "Main Office Location",
-                  },
-                  {
                     icon: Phone,
-                    title: "+91 123456789",
-                    subtitle: "24/7 Booking Hotline",
+                    title: "+91 6351002230",
                   },
                   {
                     icon: Mail,
-                    title: "info@dhyanacabline.com",
-                    subtitle: "Customer Support",
+                    title: "dhyanagadhvi1@gmail.com",
                   },
-                ].map(({ icon: Icon, title, subtitle }, index) => (
+                  {
+                    icon: MapPin,
+                    title: "Jamnagar, Gujarat",
+                  },
+                ].map(({ icon: Icon, title }, index) => (
                   <div
                     key={index}
                     className="flex items-center gap-3 min-w-[150px] text-gray-600 dark:text-gray-300 hover:text-yellow-500 transition-colors duration-300 group cursor-pointer"
@@ -95,9 +72,6 @@ const Footer = () => {
                     </div>
                     <div className="text-sm">
                       <p className="font-medium leading-none">{title}</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {subtitle}
-                      </p>
                     </div>
                   </div>
                 ))}
