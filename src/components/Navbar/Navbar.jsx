@@ -31,7 +31,6 @@ const Navbar = ({ theme, setTheme }) => {
       }
     }
 
-    // Reset the reload flag on full page close
     const handleBeforeUnload = () => {
       sessionStorage.removeItem("hasReloaded");
     };

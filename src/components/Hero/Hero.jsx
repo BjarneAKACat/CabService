@@ -196,7 +196,7 @@
 
 // export default Hero;
 import React, { useEffect } from "react";
-import { ArrowRight, Star, Shield, Zap } from "lucide-react";
+import { Star, Shield, Zap } from "lucide-react";
 import { Helmet } from 'react-helmet';
 import Form from "../Form/Form";
 import carPng from "../../assets/car.png";

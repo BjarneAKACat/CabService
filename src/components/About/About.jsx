@@ -1,51 +1,42 @@
-// import React from "react";
-// import CarPng from "../../assets/car1.png";
-
-// const About = () => {
-//   return (
-//     <div className="dark:bg-dark bg-slate-100 sm:min-h-[600px] sm:grid sm:place-items-center duration-300">
-//       <div className="container">
-//         <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center">
-//           <div data-aos="slide-right" data-aos-duration="1500">
-//             <img
-//               src={CarPng}
-//               alt=""
-//               className="sm:scale-125 sm:-translate-x-11 max-h-[300px] drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
-//             />
-//           </div>
-//           <div>
-//             <div className="space-y-5 sm:p-16 pb-6">
-//               <h1
-//                 data-aos="fade-up"
-//                 className="text-3xl sm:text-4xl font-bold font-serif"
-//               >
-//                 About us
-//               </h1>
-//               <p data-aos="fade-up" className="leading-8 tracking-wide">
-//                 At <strong>Car Rental</strong>, we believe in making travel simple, flexible, and accessible to everyone. 
-//                 Whether you're heading on a weekend getaway, a business trip, or just need a ride for the day — we've got the perfect car for you.
-//               </p>
-//               <p data-aos="fade-up">
-//                 With a wide range of vehicles, transparent pricing, and a seamless booking experience, we take the hassle out of renting a car. 
-//                 Our mission is to get you on the road with comfort and confidence, backed by 24/7 customer support and well-maintained vehicles.
-//               </p>
-//               <button data-aos="fade-up" className="button-outline">
-//                 Get Started
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default About;
-import React from "react";
-import { Shield, Clock, Users, Award, CheckCircle, ArrowRight } from "lucide-react";
+import React, {useState} from "react";
+import { Shield, Clock, Users, Award, CheckCircle } from "lucide-react";
+import CountUp from "react-countup";
 import CarPng from "../../assets/car1.png";
+import VisibilitySensor from 'react-visibility-sensor';
 
 const About = () => {
+  const [visible, setVisible] = useState(false);
+  const onVisibilityChange = (isVisible) => {
+    if (isVisible) {
+      setVisible((v) => !v);
+    }
+  };
+
+    const renderCountUp = (end, suffix) => (
+    <CountUp
+      start={0}
+      end={end}
+      duration={2}
+      suffix={suffix || ''}
+      redraw={true}
+    >
+      {({ countUpRef, start, reset }) => (
+        <VisibilitySensor
+          onChange={(isVisible) => {
+            if (isVisible) {
+              reset();
+              start();
+              onVisibilityChange(true);
+            }
+          }}
+          delayedCall
+          partialVisibility
+        >
+          <span ref={countUpRef} />
+        </VisibilitySensor>
+      )}
+    </CountUp>
+  );
 
   const features = [
     {
@@ -68,13 +59,6 @@ const About = () => {
       title: "Premium Fleet",
       description: "Well-maintained, top-quality vehicles"
     }
-  ];
-
-  const stats = [
-    { number: "15K+", label: "Happy Customers" },
-    { number: "500+", label: "Premium Cars" },
-    { number: "99%", label: "Satisfaction Rate" },
-    { number: "24/7", label: "Customer Support" }
   ];
 
   return (
@@ -170,7 +154,7 @@ const About = () => {
               {/* Features grid */}
               <div 
                 data-aos="fade-up" 
-                data-aos-delay="800"
+                data-aos-delay="100"
                 className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6"
               >
                 {features.map((feature, index) => (
@@ -190,42 +174,77 @@ const About = () => {
                 ))}
               </div>
 
-              {/* Statistics */}
-              <div 
-                data-aos="fade-up" 
-                data-aos-delay="1000"
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-t border-primary/20"
-              >
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-xl sm:text-2xl font-black text-primary" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                      {stat.number}
-                    </div>
-                    <div className="text-xs opacity-70 font-medium" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>
-                      {stat.label}
-                    </div>
+             {/* Stats */}
+             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-t border-primary/20">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {renderCountUp(15, 'K+')}
                   </div>
-                ))}
-              </div>
+                  <div className="text-xs opacity-70 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    Happy Customers
+                  </div>
+                </div>
 
-              {/* CTA Buttons */}
-              <div 
-                data-aos="fade-up" 
-                data-aos-delay="1200"
-                className="flex flex-col sm:flex-row gap-4 pt-4"
-              >
-                <button className="group rounded-xl bg-primary hover:bg-primary/90 transition-all duration-500 py-4 px-8 text-black font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-                  style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-                >
-                  Get Started
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                
-                <button className="rounded-xl border-2 border-primary/40 hover:border-primary hover:bg-primary/5 transition-all duration-500 py-4 px-8 font-semibold backdrop-blur-sm"
-                  style={{fontFamily: 'Inter, system-ui, sans-serif'}}
-                >
-                  Learn More
-                </button>
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {renderCountUp(500, '+')}
+                  </div>
+                  <div className="text-xs opacity-70 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    Premium Cars
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    {renderCountUp(99, '%')}
+                  </div>
+                  <div className="text-xs opacity-70 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    Satisfaction Rate
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <CountUp start={0} end={24} duration={2} redraw={true}>
+                      {({ countUpRef, start, reset }) => (
+                        <VisibilitySensor
+                          onChange={(isVisible) => {
+                            if (isVisible) {
+                              reset();
+                              start();
+                              onVisibilityChange(true);
+                            }
+                          }}
+                          delayedCall
+                          partialVisibility
+                        >
+                          <span ref={countUpRef} />
+                        </VisibilitySensor>
+                      )}
+                    </CountUp>
+                    /
+                    <CountUp start={0} end={7} duration={2} redraw={true}>
+                      {({ countUpRef, start, reset }) => (
+                        <VisibilitySensor
+                          onChange={(isVisible) => {
+                            if (isVisible) {
+                              reset();
+                              start();
+                              onVisibilityChange(true);
+                            }
+                          }}
+                          delayedCall
+                          partialVisibility
+                        >
+                          <span ref={countUpRef} />
+                        </VisibilitySensor>
+                      )}
+                    </CountUp>
+                  </div>
+                  <div className="text-xs opacity-70 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    Customer Support
+                  </div>
+                </div>
               </div>
             </div>
           </div>

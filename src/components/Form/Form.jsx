@@ -4,7 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 export default function Form() {
-      const [state, originalHandleSubmit] = useForm("mgvkdpjr");
+  const [state, originalHandleSubmit] = useForm(import.meta.env.VITE_EMAIL_SERVICE);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({});
@@ -88,7 +88,7 @@ export default function Form() {
               <div className="mt-4 flex flex-col items-center space-y-4">
                 <div className="recaptcha-container">
                   <ReCAPTCHA
-                    sitekey="6Lf7Nj4rAAAAAAw8PR9ewLPVj45PTfs8MqgKClXX"
+                    sitekey={import.meta.env.VITE_CAPCHA_API}
                     onChange={handleCaptchaChange}
                   />
                   {errors.captcha && <p className="text-red-500 text-sm mt-1">{errors.captcha}</p>}

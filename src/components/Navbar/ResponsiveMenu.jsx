@@ -85,23 +85,6 @@ const ResponsiveMenu = ({ showMenu, closeMenu }) => {
       ))}
     </ul>
   </nav>
-
-  {/* Footer */}
-  {/* <div className="px-6 py-4 border-t border-yellow-300 dark:border-amber-600 bg-yellow-50 dark:bg-gray-800">
-    <div className="flex justify-center space-x-4 mb-3">
-      <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-      <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-      <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-    </div>
-    <p className="text-center text-xs text-gray-500 dark:text-gray-400">
-      Your Trusted Ride Partner
-    </p>
-  </div> */}
-
-  {/* Decorative Elements */}
-  {/* <div className="absolute top-20 right-4 w-20 h-20 bg-yellow-400/20 dark:bg-yellow-400/10 rounded-full blur-xl"></div>
-  <div className="absolute bottom-32 left-4 w-16 h-16 bg-orange-400/20 dark:bg-orange-400/10 rounded-full blur-lg"></div> */}
-  
 </div>
 </>
   );

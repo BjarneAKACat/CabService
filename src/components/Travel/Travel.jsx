@@ -242,11 +242,11 @@ const GujaratCabServices = () => {
                         </div>
                       </div>
                       
-                      {isCurrent && (
+                      {/* {isCurrent && (
                         <button className="w-full py-3 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
                           Book This Trip
                         </button>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
