@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { Star, Shield, Zap } from "lucide-react";
 import { Helmet } from 'react-helmet';
 import Form from "../Form/Form";
-import carPng from "../../assets/car.png";
-import yellowCar from "../../assets/banner-car.png";
 import bgVdo from "../../assets/bgVdo.mp4";
+import hero from "../../assets/hero.mp4";
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
@@ -77,11 +76,16 @@ const Hero = ({ theme }) => {
               <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce"></div>
 
               <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700 max-w-full overflow-hidden">
-                <img
-                  src={theme === "dark" ? carPng : yellowCar}
-                  alt="Premium Car"
-                  className="max-w-full h-auto object-contain"
-                />
+                <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto object-contain"
+              >
+                <source src={hero} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
                 <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
                   PREMIUM
                 </div>

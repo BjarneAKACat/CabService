@@ -100,7 +100,7 @@ const Navbar = ({ theme, setTheme }) => {
           ))}
           
           {/* Theme Toggle */}
-          <li className="ml-4">
+          {/* <li className="ml-4">
             <div className="relative">
               {theme === "dark" ? (
                 <button
@@ -118,14 +118,14 @@ const Navbar = ({ theme, setTheme }) => {
                 </button>
               )}
             </div>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
       {/* Mobile Navbar */}
       <div className="flex items-center gap-3 md:hidden">
         {/* Mobile Theme Toggle */}
-        <div className="relative">
+        {/* <div className="relative">
           {theme === "dark" ? (
             <button
               onClick={() => setTheme("light")}
@@ -141,7 +141,7 @@ const Navbar = ({ theme, setTheme }) => {
               <BiSolidMoon className="text-xl" />
             </button>
           )}
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <button
