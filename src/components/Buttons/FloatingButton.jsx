@@ -4,10 +4,11 @@ import { FaWhatsapp } from "react-icons/fa";
 const FloatingButtons = () => {
   return (
     <>
+    
       <div className="relative z-[20]">
   {/* Call Button */}
   <a
-    href="tel:+916351002230"
+    href="tel:+916356802230"
     className="fixed bottom-8 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg z-[9999]"
     aria-label="Call Us"
   >
