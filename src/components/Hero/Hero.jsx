@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Form from "../Form/Form";
 import mainVdo from "../../assets/mainVdo.mp4";
 import hero from "../../assets/hero.mp4";
+import mini from "../../assets/mini.mp4";
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 import car from "../../assets/car.png"
@@ -89,7 +90,7 @@ const Hero = ({ theme }) => {
                   poster={car}
                   className="w-full h-[250px] object-cover rounded-2xl"
                 >
-                  <source src={hero} type="video/mp4" />
+                  <source src={mini} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
