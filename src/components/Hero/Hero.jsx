@@ -6,6 +6,7 @@ import mainVdo from "../../assets/mainVdo.mp4";
 import hero from "../../assets/hero.mp4";
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
+import car from "../../assets/car.png"
 
 const Hero = ({ theme }) => {
   useEffect(() => {}, []);
@@ -81,7 +82,8 @@ const Hero = ({ theme }) => {
                 muted
                 loop
                 playsInline
-                className="w-full h-auto object-contain"
+                poster={car}
+                className="w-full h-auto object-cover"
               >
                 <source src={hero} type="video/mp4" />
                 Your browser does not support the video tag.
