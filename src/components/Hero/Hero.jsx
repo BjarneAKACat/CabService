@@ -79,25 +79,48 @@ const Hero = ({ theme }) => {
               <div className="absolute top-1/2 -left-6 w-8 h-8 bg-primary/25 rounded-full blur-sm animate-bounce"></div>
 
               <div className="relative bg-gradient-to-br from-white/5 to-transparent rounded-3xl p-6 backdrop-blur-sm border border-white/10 group-hover:border-primary/30 transition-all duration-700 max-w-full overflow-hidden">
+              {/* Mobile View */}
+              <div className="block md:hidden">
                 <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={car}
-                className="w-full h-auto object-cover"
-              >
-                <source src={hero} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-                <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
-                  PREMIUM
-                </div>
-                <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
-                  <Star className="w-3 h-3 text-primary fill-current" />
-                  <span className="text-xs font-semibold">4.9</span>
-                </div>
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster={car}
+                  className="w-full h-[250px] object-cover rounded-2xl"
+                >
+                  <source src={hero} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
+
+              {/* Desktop View */}
+              <div className="hidden md:block">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster={car}
+                  className="w-full h-[400px] object-cover rounded-2xl"
+                >
+                  <source src={hero} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              {/* Premium Tag */}
+              <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
+                PREMIUM
+              </div>
+
+              {/* Rating Tag */}
+              <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
+                <Star className="w-3 h-3 text-primary fill-current" />
+                <span className="text-xs font-semibold">4.9</span>
+              </div>
+            </div>
+
             </div>
 
             {/* Form Section */}
