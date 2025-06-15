@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Star, Shield, Zap } from "lucide-react";
 import { Helmet } from 'react-helmet';
 import Form from "../Form/Form";
-import bgVdo from "../../assets/bgVdo.mp4";
+import mainVdo from "../../assets/mainVdo.mp4";
 import hero from "../../assets/hero.mp4";
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -30,7 +30,7 @@ const Hero = ({ theme }) => {
             playsInline
             className="w-full h-auto object-contain"
           >
-            <source src={bgVdo} type="video/mp4" />
+            <source src={mainVdo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -44,7 +44,7 @@ const Hero = ({ theme }) => {
             playsInline
             className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none max-h-none -translate-x-1/2 -translate-y-1/2 object-cover"
           >
-            <source src={bgVdo} type="video/mp4" />
+            <source src={mainVdo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
