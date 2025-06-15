@@ -29,8 +29,10 @@ const Hero = ({ theme }) => {
             muted
             loop
             playsInline
-            className="w-full h-auto object-contain"
+            poster="/fallback.jpg"
+            className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover"
           >
+
             <source src={mainVdo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
