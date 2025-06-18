@@ -1,4 +1,11 @@
 import React from "react";
+import dzire from "../../assets/dzire.png";
+import ertiga from "../../assets/ertiga.png";
+import etios from "../../assets/etios.png";
+import kia_carnes from "../../assets/kia_carnes.png";
+import innova from "../../assets/innova.png";
+import crysta from "../../assets/crysta.png";
+
 
 const Cars = () => {
   const carData = [
@@ -9,7 +16,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://wallpapercave.com/wp/wp9332432.jpg",
+      image: etios,
       features: ["Economy", "Fuel Efficient", "City Travel"]
     },
     {
@@ -19,7 +26,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://wallpapercave.com/wp/wp6205933.jpg",
+      image: dzire,
       features: ["Comfort", "AC", "Spacious"]
     },
     {
@@ -29,7 +36,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://img.indianautosblog.com/2018/04/2018-Suzuki-Ertiga-2018-Maruti-Ertiga-front-three-quarters.jpg",
+      image: ertiga,
       features: ["7-Seater", "Family", "Luggage Space"]
     },
     {
@@ -39,7 +46,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://www.keralatourpackagesite.com/wp-content/uploads/2019/01/innova-SuperWhite2.png",
+      image: innova,
       features: ["8-Seater", "Premium", "Long Distance"]
     },
     {
@@ -49,7 +56,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://www.livemint.com/lm-img/img/2023/08/02/1600x900/Toyota_Innova_Crysta_Petrol_1671612142263_1690967289659.webp",
+      image: crysta,
       features: ["Luxury", "VIP", "Business Travel"]
     },
     {
@@ -59,7 +66,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: "https://s.yimg.com/fz/api/res/1.2/WV1mUKBEn3gv0ASs4lA9YQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/71550272-03b0-3ead-ab85-3cd249077a54/t_500x300",
+      image: kia_carnes,
       features: ["Comfortable", "Spacious", "Family Travel"]
     },
   ];
@@ -139,7 +146,9 @@ const Cars = () => {
                         <img 
                           src={car.image} 
                           alt={car.models}
-                          className="relative w-full h-24 sm:h-32 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-lg"
+                          className={`relative w-full h-24 sm:h-32 object-contain transition-transform duration-500 drop-shadow-lg ${
+                            (car.models === "Etios" || car.models === "Ertiga") ? "scale-x-[-1]" : ""
+                          }`}
                         />
                       </div>
                       

@@ -125,20 +125,20 @@ const Hero = ({ theme }) => {
             </div>
 
             {/* Form Section */}
-            <div className="order-2 sm:order-1 w-full max-w-md px-8 py-4 sm:px-10 sm:py-6 bg-white dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700 min-h-[400px]">
-              <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-center w-full">
-                Contact Us
-              </h2>
-              <p className="text-sm sm:text-sm text-gray-500 dark:text-gray-400 font-bold tracking-wide m-1">
-                Jahan Bhi Jana Hai,
-              </p>
-              <p className="text-sm sm:text-sm text-gray-500 dark:text-gray-400 font-bold tracking-wide mb-4">
-                Hum Saath Hai.
-              </p>
-              <div className="w-full sm:w-[90%] md:w-[95%] lg:w-full">
-                <Form />
-              </div>
-            </div>
+            <div className="order-2 sm:order-1 w-full max-w-xl px-8 py-6 sm:px-10 sm:py-8 bg-white dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700 min-h-[400px]">
+  <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-center w-full">
+    Jahan Bhi Jana Hai,<br />Hum Saath Hai.
+  </h2>
+
+  <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 font-medium tracking-wide text-center mb-6">
+    We’ve got your back! Safe rides, like family, always making sure you and your loved ones are comfortable every time you travel with us.
+  </p>
+
+  <div className="w-full sm:w-[90%] md:w-[95%] lg:w-full">
+    <Form />
+  </div>
+</div>
+
           </div>
         </div>
       </section>
