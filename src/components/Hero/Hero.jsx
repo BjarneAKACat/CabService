@@ -1,16 +1,206 @@
 import React, { useEffect } from "react";
-import { Star, Shield, Zap } from "lucide-react";
+import { Star } from "lucide-react";
 import { Helmet } from 'react-helmet';
 import Form from "../Form/Form";
 import mainVdo from "../../assets/mainVdo.mp4";
 import hero from "../../assets/hero.mp4";
 import mini from "../../assets/mini.mp4";
-import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
 import car from "../../assets/car.png"
+import { Car, Users, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import dzire from "../../assets/dzire.png";
+import ertiga from "../../assets/ertiga.png";
+import etios from "../../assets/etios.png";
+import kia_carnes from "../../assets/kia_carnes.png";
+import innova from "../../assets/innova.png";
+import crysta from "../../assets/crysta.png";
 
 const Hero = ({ theme }) => {
   useEffect(() => {}, []);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [slidesPerView, setSlidesPerView] = React.useState(1);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setSlidesPerView(3);
+      else if (window.innerWidth >= 768) setSlidesPerView(2);
+      else setSlidesPerView(1);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const carData = [
+      {
+        type: "Sedan",
+        models: "Etios",
+        rate: "₹10/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: etios,
+        features: ["Economy", "Fuel Efficient", "City Travel"],
+        rating: "4.5"
+      },
+      {
+        type: "Sedan",
+        models: "Swift Dzire",
+        rate: "₹10/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: dzire,
+        features: ["Comfort", "AC", "Spacious"],
+        rating: "4.5"
+      },
+      {
+        type: "SUV",
+        models: "Ertiga",
+        rate: "₹12/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: ertiga,
+        features: ["7-Seater", "Family", "Luggage Space"],
+        rating: "4.5"
+      },
+      {
+        type: "MUV",
+        models: "Innova",
+        rate: "₹16/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: innova,
+        features: ["8-Seater", "Premium", "Long Distance"],
+        rating: "4.5"
+      },
+      {
+        type: "MUV",
+        models: "Crysta",
+        rate: "₹18/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: crysta,
+        features: ["Luxury", "VIP", "Business Travel"],
+        rating: "4.5"
+      },
+      {
+        type: "MUV",
+        models: "Kia Carens",
+        rate: "₹30/km",
+        average: "300km average day",
+        da: "₹300 DA",
+        extra: "Extra toll + parking",
+        image: kia_carnes,
+        features: ["Comfortable", "Spacious", "Family Travel"],
+        rating: "4.5"
+      },
+    ];
+
+  const CarCard = ({ car, index }) => (
+  <div className="group relative">
+    {/* Main Card */}
+    <div className="relative bg-gray-900/60 backdrop-blur-sm border border-gray-800/50 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 hover:-translate-y-2">
+      {/* Image Container */}
+      <div className="relative h-48 bg-gradient-to-br from-yellow-500/10 via-yellow-400/5 to-amber-500/10 flex items-center justify-center overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-24 h-24 bg-amber-400 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        </div>
+        
+        {/* Car Image */}
+        <div className="relative z-10 group-hover:scale-110 transition-transform duration-700">
+          <img
+            src={car.image}
+            alt={car.models}
+            className={`max-h-32 max-w-full object-contain drop-shadow-2xl ${
+              (car.models === "Etios" || car.models === "Ertiga") ? "scale-x-[-1]" : ""
+            }`}
+          />
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-yellow-400/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
+          <Star className="w-3 h-3 text-yellow-400 fill-current" />
+          <span className="text-yellow-400 text-xs font-medium">{car.rating}</span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        {/* Header */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
+              {car.models}
+            </h3>
+            <span className="bg-yellow-500/20 text-yellow-400 text-xs font-medium px-2 py-1 rounded-full border border-yellow-500/30">
+              {car.type}
+            </span>
+          </div>
+          
+          {/* Rating and Features */}
+          <div className="flex flex-wrap gap-1">
+            {car.features.map((feature, idx) => (
+              <span key={idx} className="text-xs bg-gray-800/60 text-gray-300 px-2 py-1 rounded-md border border-gray-700/50">
+                {feature}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-white">{car.rate}</span>
+            </div>
+            <div className="text-right">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-500/0 via-yellow-400/0 to-yellow-500/0 group-hover:from-yellow-500/5 group-hover:via-yellow-400/5 group-hover:to-yellow-500/5 transition-all duration-500 pointer-events-none"></div>
+    </div>
+  </div>
+);
+
+const CustomNavButton = ({ direction, onClick, disabled }) => (
+  <button
+    onClick={onClick}
+    disabled={disabled}
+    className={`absolute ${direction === 'prev' ? 'left-4' : 'right-4'} top-1/2 -translate-y-1/2 z-10 
+      bg-yellow-500 hover:bg-yellow-400 disabled:bg-gray-700 disabled:cursor-not-allowed
+      w-12 h-12 rounded-full flex items-center justify-center
+      transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-yellow-500/25
+      ${disabled ? 'opacity-50' : 'opacity-90 hover:opacity-100'}`}
+  >
+    {direction === 'prev' ? 
+      <ChevronLeft className="w-5 h-5 text-black" /> : 
+      <ChevronRight className="w-5 h-5 text-black" />
+    }
+  </button>
+);
+
+const nextSlide = () => {
+    const maxSlide = carData.length - slidesPerView;
+    setCurrentSlide(prev => prev < maxSlide ? prev + 1 : prev);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => prev > 0 ? prev - 1 : prev);
+  };
+
 
   return (
     <div className="dark:bg-black dark:text-white duration-300 relative overflow-hidden">
@@ -112,13 +302,13 @@ const Hero = ({ theme }) => {
 
               {/* Premium Tag */}
               <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
-                PREMIUM
+                Cab Ready
               </div>
 
               {/* Rating Tag */}
               <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
                 <Star className="w-3 h-3 text-primary fill-current" />
-                <span className="text-xs font-semibold">4.9</span>
+                <span className="text-xs font-semibold">24/7</span>
               </div>
             </div>
 
@@ -141,98 +331,84 @@ const Hero = ({ theme }) => {
           </div>
         </div>
       </section>
-      <section className="w-full bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+      <section className="relative w-full bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 border-t border-yellow-500/20 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-amber-400 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Section Header */}
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-yellow-100 to-white bg-clip-text text-transparent">
+            Choose Your Ride
+          </h2>
           
-          {/* TRUSTED & SECURE badge */}
-          <div data-aos="fade-up" data-aos-delay="10" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 backdrop-blur-sm">
-            <Shield className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-semibold tracking-wide">TRUSTED & SECURE</span>
-          </div>
-
-          {/* Heading */}
-          <div className="space-y-3">
-            <p data-aos="fade-up" data-aos-delay="10"className="text-primary text-xl sm:text-2xl font-bold tracking-wider uppercase">Effortless</p>
-            <h1 data-aos="fade-up" data-aos-delay="20" className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-gray-900 dark:text-white">
-              Car Rental
-            </h1>
-          </div>
-
-          {/* Description */}
-          <div className="space-y-4">
-            <p data-aos="fade-up" data-aos-delay="30" className="text-lg lg:text-xl leading-relaxed text-gray-700 dark:text-gray-300 font-medium">
-              Drive Your Way — Easy, Affordable, Reliable.
-            </p>
-            <p data-aos="fade-up" data-aos-delay="40" className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              Rent your dream car in just a few clicks. Flexible plans. Instant bookings. No hidden fees.
-            </p>
-          </div>
-
-          {/* Features */}
-          <div data-aos="fade-up" className="flex flex-wrap gap-6 py-4">
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Instant Booking</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Fully Insured</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Star className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">5-Star Service</span>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-primary/20">
-          {/* Happy Clients */}
-          <div className="text-center sm:text-left">
-            <div className="text-2xl lg:text-3xl font-black text-primary">
-              <CountUp end={15000} duration={2} separator=",">
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef}>0</span>
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              +
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Happy Clients</div>
-          </div>
-
-          {/* Premium Cars */}
-          <div className="text-center sm:text-left">
-            <div className="text-2xl lg:text-3xl font-black text-primary">
-              <CountUp end={500} duration={2}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef}>0</span>
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              +
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Premium Cars</div>
-          </div>
-
-          {/* Support */}
-          <div className="text-center sm:text-left">
-            <div className="text-2xl lg:text-3xl font-black text-primary">
-              <CountUp end={24} duration={2}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef}>0</span>
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              /7
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 font-medium">Support</div>
-          </div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Premium vehicles for every journey. Safe, comfortable, and reliable transportation at your fingertips.
+          </p>
         </div>
+
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          {slidesPerView < carData.length && (
+            <>
+            <div className="absolute top-1/3 translate-y-1/2 w-full flex justify-between -mt-8 px-4 z-10">
+              <CustomNavButton 
+                direction="prev" 
+                onClick={prevSlide} 
+                disabled={currentSlide === 0}
+              />
+              <CustomNavButton 
+                direction="next" 
+                onClick={nextSlide} 
+                disabled={currentSlide >= carData.length - slidesPerView}
+              />
+              </div>
+            </>
+          )}
+
+          {/* Cars Grid */}
+          <div className="overflow-hidden rounded-2xl">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ 
+                transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)`,
+              }}
+            >
+              {carData.map((car, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 px-3"
+                  style={{ width: `${100 / slidesPerView}%` }}
+                >
+                  <CarCard car={car} index={index} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pagination Dots */}
+          {slidesPerView < carData.length && (
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: carData.length - slidesPerView + 1 }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-yellow-400 w-8' 
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
-      </section>
+      </div>
+    </section>
 
     </div>
   );

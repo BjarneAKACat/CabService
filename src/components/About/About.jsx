@@ -48,7 +48,9 @@ const About = () => {
               >
                 Jab chahiye, tab ready
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Urgent travel ke time pe cab nahi milti? Humari cabs hamesha time pe aur ready milengi – no wait, no stress.</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '600' }}
+              >Urgent travel ke time pe cab nahi milti? Humari cabs hamesha time pe aur ready milengi – no wait, no stress.</p>
             </div>
 
             {/* Card 2 */}
@@ -60,7 +62,9 @@ const About = () => {
               >
                 Family ya solo, sab special
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Solo travel ho ya family ke saath, humare liye har ride special hai. Best service dena humara promise hai, har baar.</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '600' }}
+              >Solo travel ho ya family ke saath, humare liye har ride special hai. Best service dena humara promise hai, har baar.</p>
             </div>
           </div>
 
@@ -88,7 +92,9 @@ const About = () => {
               >
                 Safe aur reliable rides
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '800' }}>Cabs mein travel karte waqt safety ki tension hoti hai? Humare drivers trustworthy, helpful aur friendly hain – jaise apne hi family ke saath travel kar rahe ho.</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed" 
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '600' }}
+              >Cabs mein travel karte waqt safety ki tension hoti hai? Humare drivers trustworthy, helpful aur friendly hain – jaise apne hi family ke saath travel kar rahe ho.</p>
             </div>
 
             {/* Card 4 */}
@@ -100,7 +106,9 @@ const About = () => {
               >
                 City tour or shopping
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '700' }}>Naye sheher mein travel karte waqt prices ko lekar tension hoti hai? Hum aapko bilkul fair aur reasonable rates pe service denge, jo aapke budget mein fit ho. Koi hidden charges nahi.</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
+               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '600' }}
+               >Naye sheher mein travel karte waqt prices ko lekar tension hoti hai? Hum aapko bilkul fair aur reasonable rates pe service denge, jo aapke budget mein fit ho. Koi hidden charges nahi.</p>
             </div>
           </div>
         </div>

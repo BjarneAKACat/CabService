@@ -7,7 +7,6 @@ import "aos/dist/aos.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
-import Services from "./components/Services/Services";
 import Cars from "./components/Services/Cars";
 import Travel from "./components/Travel/Travel";
 import Contact from "./components/Contact/Contact";

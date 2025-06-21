@@ -8,22 +8,23 @@ const testimonialData = [
   {
     name: "Dilshad",
     image: "",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    description: "Excellent service! The car was in perfect condition, the staff was friendly, and the booking process was super easy. Highly recommend this company for a smooth and hassle-free rental experience",
     aosDelay: "0",
   },
   {
     name: "Satya",
     image: "",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    description: "Best round trip in dwarka somnath sasan gir.  5-day round-trip best drive, Vijay Gadhvi. Thank you very much Dhyna Cab Line.",
     aosDelay: "150",
   },
   {
     name: "Sabir",
     image: "",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    description: "Best one-way service: Dhyana cab. Thank you very much. My Daughter was carefully picked up and dropped from Jamnagar to Ahmedabad airport. Thanks once again.",
     aosDelay: "300",
   },
 ];
+
 
 const Testimonial = () => {
   return (
@@ -69,58 +70,7 @@ const Testimonial = () => {
                 We pride ourselves on delivering exceptional service, and our customers agree!  
                 Here's what real users are saying about their experiences with our hassle-free car rental service.
               </p>
-            </div>
-
-            {/* Stats */}
-            <div 
-              data-aos="fade-up" 
-              data-aos-delay="600"
-              className="flex justify-center gap-8 pt-8"
-            >
-              {/* Average Rating */}
-              <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  <CountUp end={4.9} duration={2} decimals={1}>
-                    {({ countUpRef, start }) => (
-                      <VisibilitySensor onChange={start} delayedCall>
-                        <span ref={countUpRef} />
-                      </VisibilitySensor>
-                    )}
-                  </CountUp>
-                </div>
-                <div className="text-sm opacity-70 font-medium">Average Rating</div>
-              </div>
-
-              {/* Reviews */}
-              <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  <CountUp end={2000} duration={2} separator=",">
-                    {({ countUpRef, start }) => (
-                      <VisibilitySensor onChange={start} delayedCall>
-                        <span ref={countUpRef} />
-                      </VisibilitySensor>
-                    )}
-                  </CountUp>
-                  +
-                </div>
-                <div className="text-sm opacity-70 font-medium">Reviews</div>
-              </div>
-
-              {/* Satisfaction */}
-              <div className="text-center">
-                <div className="text-2xl font-black text-primary" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  <CountUp end={99} duration={2}>
-                    {({ countUpRef, start }) => (
-                      <VisibilitySensor onChange={start} delayedCall>
-                        <span ref={countUpRef} />
-                      </VisibilitySensor>
-                    )}
-                  </CountUp>
-                  %
-                </div>
-                <div className="text-sm opacity-70 font-medium">Satisfaction</div>
-              </div>
-            </div>
+            </div>            
           </div>
 
           {/* Testimonials Grid */}

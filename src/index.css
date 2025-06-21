@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('swiper/swiper.min.css');
+@import url('swiper/modules/navigation/navigation.min.css');
+@import url('swiper/modules/pagination/pagination.min.css');
+
 html {
   scroll-behavior: smooth;
 }

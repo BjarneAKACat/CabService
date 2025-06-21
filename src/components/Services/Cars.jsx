@@ -142,17 +142,16 @@ const Cars = () => {
                       
                       {/* Car Image */}
                       <div className="relative mb-4 sm:mb-6 flex-1 flex items-center justify-center min-h-[120px] sm:min-h-[200px] lg:min-h-[250px]">
-  <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/50 to-amber-100/50 dark:from-yellow-900/20 dark:to-amber-900/20 rounded-xl"></div>
-  
-  <img 
-    src={car.image} 
-    alt={car.models}
-    className={`relative max-h-full max-w-full object-contain transition-transform duration-500 drop-shadow-lg ${
-      (car.models === "Etios" || car.models === "Ertiga") ? "scale-x-[-1]" : ""
-    }`}
-  />
-</div>
-
+                        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/50 to-amber-100/50 dark:from-yellow-900/20 dark:to-amber-900/20 rounded-xl"></div>
+                        
+                        <img 
+                          src={car.image} 
+                          alt={car.models}
+                          className={`relative max-h-full max-w-full object-contain transition-transform duration-500 drop-shadow-lg ${
+                            (car.models === "Etios" || car.models === "Ertiga") ? "scale-x-[-1]" : ""
+                          }`}
+                        />
+                      </div>
                       
                       {/* Pricing Info */}
                       <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
