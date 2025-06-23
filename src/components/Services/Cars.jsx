@@ -62,7 +62,7 @@ const Cars = () => {
     {
       type: "MUV",
       models: "Kia Carens",
-      rate: "₹30/km",
+      rate: "₹18/km",
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",

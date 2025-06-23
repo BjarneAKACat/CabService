@@ -54,7 +54,7 @@ export default function Form() {
       <div className="sm:grid sm:place-items-center">
             <form
               onSubmit={handleSubmit}
-              className="w-full max-w-xs flex flex-col items-center"
+              className="w-full max-w-5xl mx-auto "
               noValidate
             >
               <div className="w-full space-y-4 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">

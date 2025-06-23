@@ -92,7 +92,7 @@ const Hero = ({ theme }) => {
       {
         type: "MUV",
         models: "Kia Carens",
-        rate: "₹30/km",
+        rate: "₹18/km",
         average: "300km average day",
         da: "₹300 DA",
         extra: "Extra toll + parking",
@@ -101,6 +101,13 @@ const Hero = ({ theme }) => {
         rating: "4.5"
       },
     ];
+
+    const handleCardClick = () => {
+      window.scrollTo({
+        top: 600,
+        behavior: "smooth"
+      });
+    };
 
   const CarCard = ({ car, index }) => (
   <div className="group relative">
@@ -306,24 +313,20 @@ const nextSlide = () => {
               </div>
 
               {/* Rating Tag */}
-              <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm">
-                <Star className="w-3 h-3 text-primary fill-current" />
+              <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 px-3 py-2 rounded-full shadow-lg flex items-center gap-1 backdrop-blur-sm border border-yellow-400 text-yellow-400">
                 <span className="text-xs font-semibold">24/7</span>
               </div>
             </div>
-
             </div>
 
             {/* Form Section */}
             <div className="order-2 sm:order-1 w-full max-w-xl px-8 py-6 sm:px-10 sm:py-8 bg-white dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col justify-center items-center border border-gray-200 dark:border-gray-700 min-h-[400px]">
-              <h2 className="relative text-4xl sm:text-5xl lg:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-center w-full">
+              <h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 tracking-tight leading-tight drop-shadow-lg text-left w-full">
                 Jahan Bhi Jana Hai,<br />Hum Saath Hai.
               </h2>
-
-              <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 font-medium tracking-wide text-center mb-6">
+              <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 font-small tracking-wide text-left mb-6">
                 We’ve got your back! Safe rides, like family, always making sure you and your loved ones are comfortable every time you travel with us.
               </p>
-
               <div className="w-full sm:w-[90%] md:w-[95%] lg:w-full">
                 <Form />
               </div>
@@ -383,6 +386,7 @@ const nextSlide = () => {
                   key={index} 
                   className="flex-shrink-0 px-3"
                   style={{ width: `${100 / slidesPerView}%` }}
+                  onClick={handleCardClick}
                 >
                   <CarCard car={car} index={index} />
                 </div>
@@ -406,6 +410,17 @@ const nextSlide = () => {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Strip */}
+        <div className="w-[126%] -ml-[13%] bg-yellow-400 py-4 px-10 sm:px-24 flex flex-row flex-wrap items-center justify-between mt-14">
+          <p className="text-black font-semibold">Need a cab? We’re ready.</p>
+          <button 
+            onClick={handleCardClick}
+            className="bg-green-500 text-white font-bold px-4 py-2 rounded-full hover:bg-green-600 transition"
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </section>

@@ -50,9 +50,11 @@ const Navbar = ({ theme, setTheme }) => {
         <div className="relative">
           {/* Logo Icon */}
           <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 via-orange-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-200">
+            <Link to="/">
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6.01L3 12V20C3 20.55 3.45 21 4 21H5C5.55 21 6 20.55 6 20V19H18V20C18 20.55 18.45 21 19 21H20C20.55 21 21 20.55 21 20V12L18.92 6.01M6.5 16C5.67 16 5 15.33 5 14.5S5.67 13 6.5 13 8 13.67 8 14.5 7.33 16 6.5 16M17.5 16C16.67 16 16 15.33 16 14.5S16.67 13 17.5 13 19 13.67 19 14.5 18.33 16 17.5 16M5 11L6.5 6.5H17.5L19 11H5Z"/>
             </svg>
+            </Link>
           </div>
           {/* Pulse animation for logo */}
           <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-amber-600 rounded-xl animate-ping opacity-20"></div>
@@ -70,9 +72,11 @@ const Navbar = ({ theme, setTheme }) => {
             Dhyana Cab Line
           </span>
         </Link>
+        <Link to="/">
         <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium tracking-wide">
           Your Trusted Ride Partner
         </div>
+        </Link>
       </div>
       </div>
 
@@ -98,50 +102,11 @@ const Navbar = ({ theme, setTheme }) => {
               </Link>
             </li>
           ))}
-          
-          {/* Theme Toggle */}
-          {/* <li className="ml-4">
-            <div className="relative">
-              {theme === "dark" ? (
-                <button
-                  onClick={() => setTheme("light")}
-                  className="p-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 group"
-                >
-                  <BiSolidSun className="text-xl group-hover:rotate-180 transition-transform duration-300" />
-                </button>
-              ) : (
-                <button
-                  onClick={() => setTheme("dark")}
-                  className="p-3 rounded-xl bg-gradient-to-r from-yellow-500 via-orange-500 to-amber-600 hover:from-yellow-600 hover:via-orange-600 hover:to-amber-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 group"
-                >
-                  <BiSolidMoon className="text-xl group-hover:-rotate-12 transition-transform duration-300" />
-                </button>
-              )}
-            </div>
-          </li> */}
         </ul>
       </nav>
 
       {/* Mobile Navbar */}
       <div className="flex items-center gap-3 md:hidden">
-        {/* Mobile Theme Toggle */}
-        {/* <div className="relative">
-          {theme === "dark" ? (
-            <button
-              onClick={() => setTheme("light")}
-              className="p-2.5 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              <BiSolidSun className="text-xl" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setTheme("dark")}
-              className="p-2.5 rounded-lg bg-gradient-to-r from-yellow-500 via-orange-500 to-amber-600 hover:from-yellow-600 hover:via-orange-600 hover:to-amber-700 text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              <BiSolidMoon className="text-xl" />
-            </button>
-          )}
-        </div> */}
 
         {/* Mobile Menu Button */}
         <button
