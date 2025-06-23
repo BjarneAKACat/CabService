@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
+import { MapPin, Camera, Trees, Building, Heart, Star, Clock } from 'lucide-react';
 
 const GujaratCabServices = () => {
   const gujaratPlaces = [
     {
       id: 1,
-      name: "Jamnagar",
-      subtitle: "The Jewel of Kathiawar",
-      image: "https://www.trawell.in/admin/images/upload/133167934Jamnagar_Lakhota_Lake_and_Museum_Main.jpg",
-      distance: "320 km from Ahmedabad",
-      duration: "5-6 hours",
+      name: "Junagadh",
+      subtitle: "City of Ancient Forts",
+      image: "https://www.mysoultravels.com/wp-content/uploads/2020/05/junagardh-trip-9-1536x1515.jpg",
+      distance: "290 km from Ahmedabad",
+      duration: "4-5 hours",
       highlights: [
-        "Lakhota Palace floating on Ranmal Lake",
-        "World's largest oil refining complex",
-        "Khijadia Bird Sanctuary with 200+ species",
-        "Bala Hanuman Temple with continuous Ram Dhun"
+        "Uparkot Fort with 2300 years of history",
+        "Gir National Park - last refuge of Asiatic lions",
+        "Jubilee Garden with beautiful landscapes"
       ],
     },
     {
@@ -25,23 +25,19 @@ const GujaratCabServices = () => {
       duration: "3-4 hours",
       highlights: [
         "Watson Museum with colonial artifacts",
-        "Kaba Gandhi No Delo - Gandhi's childhood home",
-        "Race Course Ground - Asia's largest circular ground",
+        "Jubilee Garden with beautiful landscapes",
         "Jubilee Garden with beautiful landscapes"
       ],
     },
     {
       id: 3,
-      name: "Junagadh",
-      subtitle: "City of Ancient Forts",
-      image: "https://www.mysoultravels.com/wp-content/uploads/2020/05/junagardh-trip-9-1536x1515.jpg",
-      distance: "290 km from Ahmedabad",
-      duration: "4-5 hours",
+      name: "Jamnagar",
+      subtitle: "",
+      image: "https://www.trawell.in/admin/images/upload/133167934Jamnagar_Lakhota_Lake_and_Museum_Main.jpg",
+      distance: "",
+      duration: "",
       highlights: [
-        "Uparkot Fort with 2300 years of history",
-        "Girnar Hill with sacred Jain and Hindu temples",
-        "Mahabat Maqbara - stunning Indo-Islamic architecture",
-        "Gir National Park - last refuge of Asiatic lions"
+        
       ],
     },
     {
@@ -54,8 +50,7 @@ const GujaratCabServices = () => {
       highlights: [
         "Great Rann of Kutch - world's largest salt desert",
         "Rann Utsav - India's biggest cultural festival",
-        "Traditional handicrafts and mirror work",
-        "Wild Ass Sanctuary with unique wildlife"
+        "Jubilee Garden with beautiful landscapes"
       ],
     },
     {
@@ -67,11 +62,92 @@ const GujaratCabServices = () => {
       duration: "7-8 hours",
       highlights: [
         "Dwarkadhish Temple - one of Char Dham",
-        "Bet Dwarka island with ancient temples",
-        "Beautiful coastal landscapes and beaches",
-        "Rich mythology and spiritual significance"
+        "Rich mythology and spiritual significance",
+        "Jubilee Garden with beautiful landscapes"
       ],
     },
+    {
+      id: 6,
+      name: "Ahmedabad",
+      subtitle: "Krishna's Sacred City",
+      image: "https://sp.yimg.com/ib/th?id=OIP.CTVHGmCzXw-oXd6DRvvFoAHaE8&pid=Api&w=148&h=148&c=7&dpr=2&rs=1",
+      distance: "450 km from Ahmedabad",
+      duration: "7-8 hours",
+      highlights: [
+        "Dwarkadhish Temple - one of Char Dham",
+        "Rich mythology and spiritual significance",
+        "Jubilee Garden with beautiful landscapes"
+      ],
+    },
+    {
+      id: 7,
+      name: "Baroda",
+      subtitle: "Krishna's Sacred City",
+      image: "https://up.yimg.com/ib/th?id=OIP.O6dt4SKv4iOURTeTvlCsLgHaEo&pid=Api&rs=1&c=1&qlt=95&w=164&h=102",
+      distance: "450 km from Ahmedabad",
+      duration: "7-8 hours",
+      highlights: [
+        "Dwarkadhish Temple - one of Char Dham",
+        "Rich mythology and spiritual significance",
+        "Jubilee Garden with beautiful landscapes"
+      ],
+    },
+    {
+      id: 8,
+      name: "Surat",
+      subtitle: "Krishna's Sacred City",
+      image: "https://up.yimg.com/ib/th?id=OIP.jh3V6VynqB-U_OQiDMho9QHaD9&pid=Api&rs=1&c=1&qlt=95&w=190&h=101",
+      distance: "450 km from Ahmedabad",
+      duration: "7-8 hours",
+      highlights: [
+        "Dwarkadhish Temple - one of Char Dham",
+        "Rich mythology and spiritual significance",
+        "Jubilee Garden with beautiful landscapes"
+      ],
+    },
+  ];
+
+  const attractions = [
+    {
+      name: "Lakhota Palace",
+      icon: Building,
+      gradient: "from-yellow-100 to-yellow-200",
+      textColor: "text-yellow-800",
+      borderColor: "border-yellow-300",
+      description: "Historic Palace",
+      duration: "2-3 hrs",
+      rating: 4.3
+    },
+    {
+      name: "Khijadia Sanctuary",
+      icon: Trees,
+      gradient: "from-yellow-200 to-yellow-300",
+      textColor: "text-yellow-900",
+      borderColor: "border-yellow-400",
+      description: "Bird Sanctuary",
+      duration: "3-4 hrs",
+      rating: 4.5
+    },
+    {
+      name: "Reliance Refinery",
+      icon: Building,
+      gradient: "from-yellow-300 to-yellow-400",
+      textColor: "text-yellow-900",
+      borderColor: "border-yellow-500",
+      description: "Industrial Tour",
+      duration: "1-2 hrs",
+      rating: 4.0
+    },
+    {
+      name: "Bala Hanuman",
+      icon: Heart,
+      gradient: "from-yellow-400 to-yellow-500",
+      textColor: "text-white",
+      borderColor: "border-yellow-600",
+      description: "Temple",
+      duration: "1-2 hrs",
+      rating: 4.7
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(2);
@@ -114,7 +190,7 @@ const GujaratCabServices = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isTransitioning) handleNext();
-    }, 5000);
+    }, 40000);
     return () => clearInterval(interval);
   }, [isTransitioning]);
 
@@ -167,8 +243,8 @@ const GujaratCabServices = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="w-full max-w-5xl mx-auto relative">
-          <div className="relative h-96 flex items-center justify-center">
+        <div className="w-full max-w-5xl mx-auto relative mt-24 mb-5">
+          <div className="relative min-h-[700px] h-auto flex items-center justify-center">
             {visibleItems.map((item) => {
               const isCurrent = item.isCenter;
               const isLeft = item.position === -1;
@@ -202,7 +278,7 @@ const GujaratCabServices = () => {
                   onClick={() => !isCurrent && goToSlide(item.originalIndex)}
                 >
                   {/* Card */}
-                  <div className="w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300">
+                  <div className="w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border-2 border-yellow-400 dark:border-yellow-500 hover:shadow-2xl transition-shadow duration-300">
                     {/* Image */}
                     <div className="h-48 overflow-hidden">
                       <img
@@ -214,6 +290,7 @@ const GujaratCabServices = () => {
                     
                     {/* Content */}
                     <div className="p-6">
+                      {/* Badge and Fare */}
                       <div className="flex items-center justify-between mb-3">
                         <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-sm font-medium rounded-full">
                           Popular
@@ -222,10 +299,13 @@ const GujaratCabServices = () => {
                           {item.fare}
                         </span>
                       </div>
-                      
+
+                      {/* Title & Subtitle */}
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.name}</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">{item.subtitle}</p>
-                      
+
+                      {/* Distance & Duration */}
+                      {item.name !== "Jamnagar" && (
                       <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
                         <div className="flex items-center gap-2">
                           <span>📍</span>
@@ -235,14 +315,161 @@ const GujaratCabServices = () => {
                           <span>⏱️</span>
                           <span>{item.duration}</span>
                         </div>
+                      </div>)}
+
+                      {/* Jamnagar Section */}
+                      {item.name === "Jamnagar" && (
+                      <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-2xl">
+                      {/* Header */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full">
+                          <MapPin className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                            Popular Attractions in Jamnagar
+                          </h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Must-visit places during your trip
+                          </p>
+                        </div>
                       </div>
-                      
-                      {/* {isCurrent && (
-                        <button className="w-full py-3 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
-                          Book This Trip
-                        </button>
-                      )} */}
+
+                      {/* Attractions Grid */}
+                      <div className="grid grid-cols-2 gap-3">
+                        {/* Lakhota Palace */}
+                        <div className={`group relative overflow-hidden bg-gradient-to-br ${attractions[0].gradient} dark:from-gray-800 dark:to-gray-700 rounded-2xl border ${attractions[0].borderColor} dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer`}>
+                          <div className="p-4 h-20 flex flex-col justify-between">
+                            
+                            <div>
+                              <h4 className={`text-sm font-bold ${attractions[0].textColor} dark:text-white leading-tight`}>
+                                {attractions[0].name}
+                              </h4>
+                              <div className="flex items-center gap-2 mt-1">
+                                <Clock className="w-3 h-3 text-gray-600 dark:text-gray-400" />
+                                <span className="text-xs text-gray-600 dark:text-gray-400">{attractions[0].duration}</span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-white/20 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        {/* Khijadia Sanctuary */}
+                        <div className={`group relative overflow-hidden bg-gradient-to-br ${attractions[1].gradient} dark:from-gray-800 dark:to-gray-700 rounded-2xl border ${attractions[1].borderColor} dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer`}>
+                          <div className="p-4 h-24 flex flex-col justify-between">          
+                            <div>
+                              <h4 className={`text-sm font-bold ${attractions[1].textColor} dark:text-white leading-tight`}>
+                                {attractions[1].name}
+                              </h4>
+                              <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">{attractions[1].description}</p>
+                              <div className="flex items-center gap-2">
+                                <Clock className="w-3 h-3 text-gray-600 dark:text-gray-400" />
+                                <span className="text-xs text-gray-600 dark:text-gray-400">{attractions[1].duration}</span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-white/20 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        {/* Reliance Refinery - Full Width */}
+                        <div className={`group relative overflow-hidden bg-gradient-to-r ${attractions[2].gradient} dark:from-gray-800 dark:to-gray-700 rounded-2xl border ${attractions[2].borderColor} dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer col-span-2`}>
+                          <div className="p-4 h-18 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="p-2 bg-white/20 dark:bg-black/20 rounded-xl">
+                              </div>
+                              <div>
+                                <h4 className={`text-base font-bold ${attractions[2].textColor} dark:text-white`}>
+                                  {attractions[2].name}
+                                </h4>
+                                <p className="text-sm text-gray-700 dark:text-gray-300">{attractions[2].description}</p>
+                              </div>
+                            </div>
+                            
+                            <div className="flex flex-col items-end gap-1">
+                              <div className="flex items-center gap-1">
+                                <Clock className="w-3 h-3 text-gray-600 dark:text-gray-400" />
+                                <span className="text-xs text-gray-600 dark:text-gray-400">{attractions[2].duration}</span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-white/20 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        {/* Bala Hanuman */}
+                        <div className={`group relative overflow-hidden bg-gradient-to-br ${attractions[3].gradient} dark:from-gray-800 dark:to-gray-700 rounded-2xl border ${attractions[3].borderColor} dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer col-span-2`}>
+                          <div className="p-4 h-16 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="p-2 bg-white/30 dark:bg-black/30 rounded-xl">
+                              </div>
+                              <div>
+                                <h4 className={`text-base font-bold ${attractions[3].textColor} dark:text-white`}>
+                                  {attractions[3].name}
+                                </h4>
+                                <div className="flex items-center gap-3 mt-1">
+                                  <span className="text-sm text-white/90 dark:text-gray-300">{attractions[3].description}</span>
+                                  <div className="flex items-center gap-1">
+                                    <Clock className="w-3 h-3 text-white/80 dark:text-gray-400" />
+                                    <span className="text-xs text-white/80 dark:text-gray-400">{attractions[3].duration}</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Decorative elements */}
+                          <div className="absolute top-2 right-2 w-8 h-8 border-2 border-white/20 rounded-full"></div>
+                          <div className="absolute bottom-2 left-2 w-4 h-4 bg-white/20 rounded-full"></div>
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-white/20 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <Camera className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                            <span className="text-xs text-gray-500 dark:text-gray-400">Perfect for photography</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>)}
+
+                      {/* 🔥 Highlights Section - Styled like Features */}
+                      {item.highlights && (
+                        <div className="grid grid-cols-1 gap-4 mt-6">
+                          {item.highlights.map((point, i) => (
+                            <div
+                              key={i}
+                              className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-yellow-300 dark:hover:border-yellow-600 transition duration-300"
+                            >
+                              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-yellow-500 to-amber-600 mb-2 flex items-center justify-center">
+                                <span className="text-white font-bold text-sm">{i + 1}</span>
+                              </div>
+                              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                                {point}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
+                    {/* Image */}
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
                   </div>
                 </div>
               );
@@ -251,7 +478,8 @@ const GujaratCabServices = () => {
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex items-center gap-4 mt-8 translate-y-6">
+        <div className="relative z-10 mt-40 flex items-center justify-center flex-wrap gap-4">
+          {/* Prev Button */}
           <button
             onClick={handlePrev}
             className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl border border-yellow-200 dark:border-yellow-800/30 text-gray-700 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-200"
@@ -261,7 +489,7 @@ const GujaratCabServices = () => {
             </svg>
           </button>
 
-          {/* Dots Navigation */}
+          {/* Dots */}
           <div className="flex items-center gap-2">
             {gujaratPlaces.map((_, index) => (
               <button
@@ -276,6 +504,7 @@ const GujaratCabServices = () => {
             ))}
           </div>
 
+          {/* Next Button */}
           <button
             onClick={handleNext}
             className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl border border-yellow-200 dark:border-yellow-800/30 text-gray-700 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-200"
@@ -285,39 +514,7 @@ const GujaratCabServices = () => {
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* Features Section */}
-      <div className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
-                Places to Travel at {gujaratPlaces[currentIndex].name}
-              </span>
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Experience comfort, safety, and reliability with every journey
-            </p>
-          </div>
-          
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {currentPlace.highlights.map((highlight, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-yellow-300 dark:hover:border-yellow-600 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-yellow-500 to-amber-600 mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">{index + 1}</span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {highlight}
-                </p>
-              </div>
-            ))}
-          </div>    
-        </div>
       </div>
     </div>
   );

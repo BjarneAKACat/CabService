@@ -91,32 +91,26 @@ const Footer = () => {
                   {[
                     {
                       icon: Facebook,
+                      url: "https://www.facebook.com/profile.php?id=61564219494060#",
                       color: "hover:text-blue-500",
                       bg: "hover:bg-blue-100 dark:hover:bg-blue-500/20",
                     },
                     {
                       icon: Instagram,
+                      url: "https://www.instagram.com/dhyana_cab_line/",
                       color: "hover:text-pink-500",
                       bg: "hover:bg-pink-100 dark:hover:bg-pink-500/20",
                     },
-                    {
-                      icon: Twitter,
-                      color: "hover:text-blue-400",
-                      bg: "hover:bg-blue-100 dark:hover:bg-blue-400/20",
-                    },
-                    {
-                      icon: Linkedin,
-                      color: "hover:text-blue-600",
-                      bg: "hover:bg-blue-100 dark:hover:bg-blue-600/20",
-                    },
-                  ].map(({ icon: Icon, color, bg }, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className={`w-10 h-10 bg-gray-100 dark:bg-gray-800 ${bg} rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 ${color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
-                    >
-                      <Icon className="w-4 h-4" />
-                    </a>
+                  ].map(({ icon: Icon, color, bg, url }, index) => (
+                      <a
+                        key={index}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-2 rounded-full transition ${color} ${bg}`}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </a>
                   ))}
                 </div>
               </div>
@@ -127,7 +121,14 @@ const Footer = () => {
           <div className="border-t border-gray-200 dark:border-gray-700 py-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-3">
               <div className="flex flex-col sm:flex-row items-center gap-3 text-gray-500 dark:text-gray-400 text-xs">
-                <p>&copy; 2025 Dhyana Cabline. All rights reserved.</p>
+                <a 
+                  href="https://www.instagram.com/thezedmedia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <p>&copy; Designed and Developed By ZEB MEDIA</p>
+                </a>
+
               </div>
 
               {/* Back to Top */}

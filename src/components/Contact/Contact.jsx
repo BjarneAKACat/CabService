@@ -1,4 +1,5 @@
 import { Car, ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
+import Cab from "../../assets/contact.png";
 import Form from '../Form/Form';
 
 const Contact = () => {
@@ -61,15 +62,31 @@ const Contact = () => {
             </div>
           </div>
           {/* Form Section */}
-          <div className="w-full flex justify-center">
-            <div className="bg-white dark:bg-gray-800 backdrop-blur-xl border border-white/10 rounded-2xl p-8 my-6 shadow-xl">
+          <div className="w-full flex flex-col md:flex-row justify-center items-center gap-8 px-4 my-10">
+            
+            {/* Image */}
+            <div className="w-full md:w-1/2 flex justify-center">
+              <img 
+                src={Cab} 
+                alt="Taxi Service Illustration"
+                className="rounded-2xl shadow-lg max-w-full h-auto"
+              />
+            </div>
+
+            {/* Form Card */}
+            <div className="w-full md:w-1/2 bg-white dark:bg-gray-800 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-black dark:text-white mb-2">Launch Your Taxi Service</h2>
-                <p className="text-gray-600 dark:text-gray-400">Tell us about your taxi business vision and we'll help you get started</p>
+                <h2 className="text-2xl font-bold text-black dark:text-white mb-2">
+                  Your Cab is Ready
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Aapki savari ready hai, bas apne safar ko enjoy karo, smooth aur safe journey humari guarantee..
+                </p>
               </div>
               <Form />
             </div>
           </div>
+
         </div>
       </div>
       {/* Tailwind Animation Delay Fix */}

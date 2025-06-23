@@ -46,7 +46,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: innova,
+      image: crysta,
       features: ["8-Seater", "Premium", "Long Distance"]
     },
     {
@@ -56,7 +56,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: crysta,
+      image: innova,
       features: ["Luxury", "VIP", "Business Travel"]
     },
     {

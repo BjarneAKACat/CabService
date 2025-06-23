@@ -133,12 +133,6 @@ const Hero = ({ theme }) => {
           {/* Glow Effect */}
           <div className="absolute inset-0 bg-yellow-400/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
-
-        {/* Floating Elements */}
-        <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
-          <Star className="w-3 h-3 text-yellow-400 fill-current" />
-          <span className="text-yellow-400 text-xs font-medium">{car.rating}</span>
-        </div>
       </div>
 
       {/* Content */}
@@ -413,15 +407,32 @@ const nextSlide = () => {
         </div>
 
         {/* Strip */}
-        <div className="w-[126%] -ml-[13%] bg-yellow-400 py-4 px-10 sm:px-24 flex flex-row flex-wrap items-center justify-between mt-14">
-          <p className="text-black font-semibold">Need a cab? We’re ready.</p>
+        {/* Mobile Version */}
+        <div className="sm:hidden w-[110%] -ml-5 bg-yellow-400 py-4 px-6 flex flex-row gap-10 items-center mt-6">
+          <p className="text-black font-semibold text-center text-sm">
+            Need a cab? We’re ready.
+          </p>
           <button 
             onClick={handleCardClick}
-            className="bg-green-500 text-white font-bold px-4 py-2 rounded-full hover:bg-green-600 transition"
+            className="bg-green-500 text-white text-base sm:text-lg font-bold px-6 py-3 rounded-full hover:bg-green-600 transition"
           >
             Contact Us
           </button>
         </div>
+
+        {/* Desktop Version */}
+        <div className="hidden sm:flex w-[126%] -ml-[13%] bg-yellow-400 py-4 px-10 sm:px-24 items-center justify-center gap-10 mt-14">
+        <p className="text-black font-bold text-xl sm:text-2xl text-center">
+          Need a cab? We’re ready.
+        </p>
+        <button 
+          onClick={handleCardClick}
+          className="bg-green-500 text-white font-bold px-6 py-2 rounded-full hover:bg-green-600 transition"
+        >
+          Contact Us
+        </button>
+      </div>
+
       </div>
     </section>
 
