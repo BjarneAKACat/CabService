@@ -33,7 +33,7 @@ const Contact = () => {
                   </div>
 
                   <h1 className="text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
-                    Let's Drive Your
+                    Book Your Ride, Hassle-Free.
                     <span className="block text-yellow-400">Taxi Business Forward</span>
                   </h1>
 
@@ -80,7 +80,7 @@ const Contact = () => {
                   Your Cab is Ready
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Aapki savari ready hai, bas apne safar ko enjoy karo, smooth aur safe journey humari guarantee..
+                  Bas apne safar ko enjoy karo, smooth aur safe journey humari guarantee..
                 </p>
               </div>
               <Form />

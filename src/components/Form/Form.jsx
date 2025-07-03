@@ -1,17 +1,11 @@
 import React, {useState} from 'react';
 import { useForm } from "@formspree/react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 
 export default function Form() {
   const [state, originalHandleSubmit] = useForm(import.meta.env.VITE_EMAIL_SERVICE);
-  const [captchaToken, setCaptchaToken] = useState(null);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({});
-
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,9 +15,7 @@ export default function Form() {
 
     const newErrors = {};
     if (!name.match(/^[A-Za-z\s]+$/)) newErrors.name = "Enter a valid name.";
-    if (!phone.match(/^\d{10}$/)) newErrors.phone = "Enter a valid 10-digit number.";
-    if (!captchaToken) newErrors.captcha = "Please verify reCAPTCHA.";
-    
+    if (!phone.match(/^\d{10}$/)) newErrors.phone = "Enter a valid 10-digit number.";    
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -31,17 +23,6 @@ export default function Form() {
     }
 
     setErrors({});
-
-    // Inject captcha token into the form
-    let existingInput = form.querySelector('input[name="g-recaptcha-response"]');
-    if (!existingInput) {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "g-recaptcha-response";
-      form.appendChild(input);
-      existingInput = input;
-    }
-    existingInput.value = captchaToken;
 
     originalHandleSubmit(e).then(() => {
       if (!state.submitting) {
