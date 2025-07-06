@@ -126,7 +126,7 @@ const Footer = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <p>&copy; Designed and Developed By ZEB MEDIA</p>
+                  <p>&copy; Designed and Developed By ZED MEDIA</p>
                 </a>
 
               </div>

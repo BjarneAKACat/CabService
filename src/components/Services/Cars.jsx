@@ -5,6 +5,7 @@ import etios from "../../assets/etios.png";
 import kia_carnes from "../../assets/kia_carnes.png";
 import innova from "../../assets/innova.png";
 import crysta from "../../assets/crysta.png";
+import { useNavigate } from "react-router-dom";
 
 const Cars = () => {
   const carData = [
@@ -45,7 +46,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: crysta,
+      image: innova,
       features: ["8-Seater", "Premium", "Long Distance"],
     },
     {
@@ -55,7 +56,7 @@ const Cars = () => {
       average: "300km average day",
       da: "₹300 DA",
       extra: "Extra toll + parking",
-      image: innova,
+      image: crysta,
       features: ["Luxury", "VIP", "Business Travel"],
     },
     {
@@ -70,7 +71,12 @@ const Cars = () => {
     },
   ];
 
-  const handleCardClick = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/contact");
+    
+    // Option 2: If you want to scroll to a contact section on the same page, use:
     window.scrollTo({
       top: 600,
       behavior: "smooth",
@@ -216,12 +222,13 @@ const Cars = () => {
           </div>
 
           {/* Mobile Version (visible on screens <640px) */}
-          <div className="sm:hidden w-[80%] mx-auto bg-yellow-400 py-4 px-8 shadow-lg flex flex-col gap-4 items-center mt-6">
-            <p className="text-black font-bold text-xl text-center">
+          <div className="sm:hidden w-[110%] -ml-5 bg-yellow-400 py-4 px-6 flex flex-row gap-10 items-center mt-6">
+            <p className="text-black font-semibold text-center text-sm">
               Need a cab? We’re ready.
             </p>
             <button
-              onClick={handleCardClick}
+              type="button"
+              onClick={handleContactClick}
               className="bg-green-500 text-white text-base font-bold px-6 py-3 rounded-full hover:bg-green-600 transition"
             >
               Contact Us
@@ -229,16 +236,18 @@ const Cars = () => {
           </div>
 
           {/* Desktop Version (visible on screens ≥640px) */}
-          <div className="hidden sm:flex w-[80%] mx-auto bg-yellow-400 py-4 px-8  shadow-lg items-center justify-between gap-10 mt-14">
-            <p className="text-black font-bold text-2xl text-center">
+          <div className="hidden sm:flex w-[126%] -ml-[13%] bg-yellow-400 py-4 px-10 sm:px-24 items-center justify-center gap-10 mt-14">
+            <p className="text-black font-bold text-xl sm:text-2xl text-center">
               Need a cab? We’re ready.
             </p>
             <button
-              onClick={handleCardClick}
-              className="bg-green-500 text-white font-bold px-6 py-3 rounded-full hover:bg-green-600 transition"
-            >
-              Contact Us
-            </button>
+            type="button"
+            onClick={handleContactClick}
+            className="bg-green-500 text-white text-base font-bold px-6 py-3 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 active:bg-green-700 transition-all duration-300 cursor-pointer relative z-20 select-none"
+            style={{ pointerEvents: 'auto' }}
+          >
+            Contact Us
+          </button>
           </div>
         </div>
       </div>

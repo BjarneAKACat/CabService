@@ -2,9 +2,15 @@ import React from "react";
 import { Shield, Clock, Users, Award } from "lucide-react";
 import about1 from "../../assets/about1.mp4";
 import about2 from "../../assets/about2.mp4";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const handleCardClick = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/contact");
+    
+    // Option 2: If you want to scroll to a contact section on the same page, use:
     window.scrollTo({
       top: 600,
       behavior: "smooth",
@@ -219,7 +225,7 @@ const About = () => {
                   className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight: "800",
+                    fontWeight: "600",
                   }}
                 >
                   Urgent travel ke time pe cab nahi milti? Humari cabs hamesha
@@ -241,7 +247,7 @@ const About = () => {
                 </h3>
                 <p
                   className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
-                  style={{ fontFamily: "Montserrat" }}
+                  style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
                 >
                   Solo travel ho ya family ke saath, humare liye har ride
                   special hai. Best service dena humara promise hai, har baar.
@@ -260,7 +266,7 @@ const About = () => {
                   className="text-xl font-semibold text-gray-900 dark:text-white mb-4"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight: "800",
+                    fontWeight: "700",
                   }}
                 >
                   Safe aur reliable rides
@@ -269,7 +275,7 @@ const About = () => {
                   className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight: "800",
+                    fontWeight: "600",
                   }}
                 >
                   Cabs mein travel karte waqt safety ki tension hoti hai? Humare
@@ -294,7 +300,7 @@ const About = () => {
                   className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight: "normal",
+                    fontWeight: "600",
                   }}
                 >
                   Naye sheher mein travel karte waqt prices ko lekar tension
@@ -325,26 +331,30 @@ const About = () => {
         </div>
 
         {/* Mobile Version (visible on screens <640px) */}
-        <div className="sm:hidden w-[80%] mx-auto bg-yellow-400 py-4 px-8 shadow-lg flex flex-col gap-4 items-center mt-6">
-          <p className="text-black font-bold text-xl text-center">
+        <div className="sm:hidden w-[110%] -ml-5 bg-yellow-400 py-2 px-4 flex items-center mt-6 overflow-x-auto whitespace-nowrap">
+          <p className="text-black font-semibold text-sm whitespace-nowrap">
             Baat sirf ride ki nahi, bharose ki bhi hai.
           </p>
           <button
-            onClick={handleCardClick}
-            className="bg-green-500 text-white text-base font-bold px-6 py-3 rounded-full hover:bg-green-600 transition"
+            type="button"
+            onClick={handleContactClick}
+            className="bg-green-500 text-white text-base font-bold px-3 py-3 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 active:bg-green-700 transition-all duration-300 cursor-pointer relative z-20 select-none"
+            style={{ pointerEvents: 'auto' }}
           >
             Contact Us
           </button>
         </div>
 
         {/* Desktop Version (visible on screens ≥640px) */}
-        <div className="hidden sm:flex w-[80%] mx-auto bg-yellow-400 py-4 px-8  shadow-lg items-center justify-between gap-10 mt-14">
-          <p className="text-black font-bold text-2xl text-center">
+          <div className="hidden sm:flex w-[126%] -ml-[13%] bg-yellow-400 py-4 px-10 sm:px-24 items-center justify-center gap-10 mt-14">
+            <p className="text-black font-bold text-xl sm:text-2xl text-center">
             Baat sirf ride ki nahi, bharose ki bhi hai.
           </p>
           <button
-            onClick={handleCardClick}
-            className="bg-green-500 text-white font-bold px-6 py-3 rounded-full hover:bg-green-600 transition"
+            type="button"
+            onClick={handleContactClick}
+            className="bg-green-500 text-white font-bold px-6 py-3 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 active:bg-green-700 transition-all duration-300 cursor-pointer relative z-20 select-none whitespace-nowrap"
+            style={{ pointerEvents: 'auto' }}
           >
             Contact Us
           </button>
